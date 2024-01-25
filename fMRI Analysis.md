@@ -16,6 +16,7 @@
 4. `Control + Z` to suspend in freeview, then `bg` to keep in background
 ### Slice-Timing Correction 
 1. `stc-sess -sf sessid -df sessdir -i fmcpr -o fmcprstc -so siemens` output should be "stc-sess Done"
-2. `spatialsmooth-sess -sf sessid -df sessdir -i fmcprstc -o sfmcprstc -fwhm 8 -no-mask -outfmt nii` term fwhm (full width half mass) determines how much smoothing there is, we set it at 8 mm which is standard. Output should be "spatiallysmooth-sess Done"
-3. `freeview bold/032/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 032/sfmcprstc.nii)
+### Spatial Smoothing
+1. `spatialsmooth-sess -sf sessid -df sessdir -i fmcprstc -o sfmcprstc -fwhm 8 -no-mask -outfmt nii` term fwhm (full width half mass) determines how much smoothing there is, we set it at 8 mm which is standard. Output should be "spatiallysmooth-sess Done"
+2. `freeview bold/032/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 032/sfmcprstc.nii)
 
