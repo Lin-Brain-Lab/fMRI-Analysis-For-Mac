@@ -22,6 +22,6 @@
 1. `spatialsmooth-sess -sf sessid -df sessdir -i fmcprstc -o sfmcprstc -fwhm 8 -no-mask -outfmt nii` term fwhm (full width half mass) determines how much smoothing there is, we set it at 8 mm which is standard. Output should be "spatiallysmooth-sess Done"
 2. `freeview bold/032/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 032/sfmcprstc.nii)
 
-
-fslregister --s s026 --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm
+## Co-Registration
+1. `fslregister --s s026 --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm`
 
