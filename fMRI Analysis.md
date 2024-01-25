@@ -4,7 +4,7 @@
 4. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time)
 ## Pre-processing fMRI Files Processed in Previous Steps
 ### Setting up Folders & Environment 
-1. `cd cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder
+1. `cd cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
 2. `vi sessid` folder name, type "unpack" into editor (ESC + :wq to save)
 3. `vi sessdir` give path to unpack folder /Users/jessica/Subjects/s026/mri/orig (in this case it is in mri and orig folder but should be in its own fmri folder)
 4. `ls bold/032` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
@@ -14,6 +14,8 @@
 2. `ls bold/032` should have more fmcpr files for motion correction
 3. `freeview bold/032/f.nii` can open f.nii (before motion correction) and fmcpr.nii.gz (after motion correction) in freeview
 4. `Control + Z` to suspend in freeview, then `bg` to keep in background
+#### In Excel
+5. Upload 
 ### Slice-Timing Correction 
 1. `stc-sess -sf sessid -df sessdir -i fmcpr -o fmcprstc -so siemens` output should be "stc-sess Done"
 ### Spatial Smoothing
