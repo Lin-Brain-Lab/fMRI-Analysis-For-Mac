@@ -24,4 +24,7 @@
 
 ## Co-Registration
 1. `fslregister --s s026 --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm`
+2. Output from previous step: to check results, run: tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig
+3. Run `tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig` and freeview should open
+
 
