@@ -10,11 +10,12 @@
 4. `ls bold/032` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
 5. `mktemplate-sess -sf sessid -df sessdir` output should be "mktemplate-sess completed"
 ### Motion Correction 
-1.`mc-sess -sf sessid -df sessdir -per-run` output should be "mc-sess completed SUCCESSFULLY" 
-2. `ls bold/032` should have more fmcpr files for motion correction 
+1. `mc-sess -sf sessid -df sessdir -per-run` output should be "mc-sess completed SUCCESSFULLY"
+2. `ls bold/032` should have more fmcpr files for motion correction
 3. `freeview bold/032/f.nii` can open f.nii (before motion correction) and fmcpr.nii.gz (after motion correction) in freeview
 4. `Control + Z` to suspend in freeview, then `bg` to keep in background
 ### Slice-Timing Correction 
 1. `stc-sess -sf sessid -df sessdir -i fmcpr -o fmcprstc -so siemens` output should be "stc-sess Done"
-2. 
-###
+2. `spatialsmooth-sess -sf sessid -df sessdir -i fmcprstc -o sfmcprstc -fwhm 8 -no-mask -outfmt nii` term fwhm (full width half mass) determines how much smoothing there is, we set it at 8 mm which is standard. Output should be "spatiallysmooth-sess Done"
+3. `freeview bold/032/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 032/sfmcprstc.nii)
+
