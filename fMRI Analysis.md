@@ -3,7 +3,7 @@
 2. Start with steps 1-10 from the "FreeSurfer Reconstruction" page
 3. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
 4. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time)
-## Pre-processing fMRI Files Processed in Previous Steps
+## Pre-processing fMRI Data Processed in Previous Steps
 ### Setting up Folders & Environment 
 1. `cd cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
 2. `vi sessid` folder name, type "unpack" into editor (ESC + :wq to save)
