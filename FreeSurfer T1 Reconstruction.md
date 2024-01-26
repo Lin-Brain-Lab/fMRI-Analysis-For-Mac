@@ -1,4 +1,4 @@
-# FreeSurfer-Reconstruction-For-Mac-Locally
+# FreeSurfer-T1-Reconstruction-For-Mac-Locally
 ### Setting up environment: 
 1. Download subject data from server to your local drive.
 2. `tcsh`
