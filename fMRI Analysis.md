@@ -29,7 +29,7 @@
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
 1. Download MNE
 2. `tcsh`
-3. `vi .cshrc` make sure you have the correct environment set up:
+3. `vi .cshrc` make sure you have the correct environment set up that looks like this (ensure MNE roots are correct for you computer):
 
 `setenv FREESURFER_HOME /Applications/freesurfer/7.4.1`
 
@@ -63,5 +63,6 @@
 
 4. `source .cshrc`
 5. `mne_make_movie` output should be mne_make_movie options
-6. 
+6. `git clone https://github.com/fahsuanlin/fhlin_toolbox.git` to get Fa-Hsuans toolbox if not already installed or updated ([fahsuanlin GitHub page](https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git)https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git) output should be 'done'
+7. 
 
