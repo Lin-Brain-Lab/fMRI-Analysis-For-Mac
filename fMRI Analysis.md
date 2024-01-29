@@ -64,5 +64,6 @@
 4. `source .cshrc`
 5. `mne_make_movie` output should be mne_make_movie options
 6. `git clone https://github.com/fahsuanlin/fhlin_toolbox.git` to get Fa-Hsuans toolbox if not already installed or updated ([fahsuanlin GitHub page](https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git)https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git) output should be 'done'
-7. In fhlin_toolbox 'git remote update' then 'git status' to update
+7. In fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable 
+8. 
 
