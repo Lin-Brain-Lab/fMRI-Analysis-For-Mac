@@ -75,4 +75,4 @@
    
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
-5. If done successfully, a 'Figure 1" tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' windw should come up. Press 'p' key to have a subject, volume, and surface window to have different views. Press 'w' for coordinates.<img 
+5. If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
