@@ -15,8 +15,6 @@
 2. `ls bold/032` should have more fmcpr files for motion correction
 3. `freeview bold/032/f.nii` can open f.nii (before motion correction) and fmcpr.nii.gz (after motion correction) in freeview
 4. `Control + Z` to suspend in freeview, then `bg` to keep in background
-#### In Excel
-5. Upload 
 ### Slice-Timing Correction 
 1. `stc-sess -sf sessid -df sessdir -i fmcpr -o fmcprstc -so siemens` output should be "stc-sess Done"
 ### Spatial Smoothing
@@ -28,4 +26,6 @@
 2. Output from previous step: to check results, run: tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig
 3. Run `tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig` and freeview should open
 
+## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
+1. 
 
