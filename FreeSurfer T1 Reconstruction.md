@@ -2,7 +2,7 @@
 ### Setting up environment: 
 1. Download subject data from server to your local drive.
 2. `tcsh`
-3. `vi. cshrc`
+3. `vi .cshrc`
 4. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
 
 `setenv FREESURFER_HOME /Applications/freesurfer`
