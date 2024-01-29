@@ -73,10 +73,10 @@
 3. `etc_render_fsbrain('subject','s026')`
 4. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path)
 
-   i. Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
+4.i. Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
-   ii. Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well
+4.ii. Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well
 
 <img width="490" alt="Screen Shot 2024-01-29 at 4 50 27 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9d72f5bf-ac0f-46eb-9dec-e2500b0eb11b">
 
