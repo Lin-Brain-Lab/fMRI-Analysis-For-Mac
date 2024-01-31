@@ -79,5 +79,20 @@
 4.ii. Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well
 <img width="490" alt="Screen Shot 2024-01-29 at 4 50 27 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9d72f5bf-ac0f-46eb-9dec-e2500b0eb11b">
 
-
 5. If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
+
+## Event-Related fMRI Analysis (https://github.com/fahsuanlin/labmanual/wiki/11.-fMRI-analysis)
+1. There should be a register.dat file from the co-registration step for your subject
+2. `tcsh`
+3. `source .cshrc`
+4. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
+5. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` to get to unpack folder of subject
+6. `cat register.dat` to see contents of register.dat file
+<img width="485" alt="Screen Shot 2024-01-31 at 1 44 54 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/42aac409-427a-42ac-98bd-914a181c3100">
+7. Open Matlab
+8. `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
+9.  Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
+10. In MatLab go to fhlin_toolbox folder and add all folders to path
+11. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';`
+12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032 folder
+13. 
