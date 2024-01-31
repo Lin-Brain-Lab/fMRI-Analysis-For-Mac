@@ -89,10 +89,10 @@
 5. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` to get to unpack folder of subject
 6. `cat register.dat` to see contents of register.dat file
 <img width="485" alt="Screen Shot 2024-01-31 at 1 44 54 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/42aac409-427a-42ac-98bd-914a181c3100">
-7. Open Matlab
-8. `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
-9.  Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
+7. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
+8. In MatLab `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
+9. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
 10. In MatLab go to fhlin_toolbox folder and add all folders to path
-11. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';`
-12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032 folder
+11. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
+12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/32 folder then run
 13. 
