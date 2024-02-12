@@ -94,7 +94,7 @@
 8. In MatLab `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
 9. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
 10. In MatLab go to fhlin_toolbox folder and add all folders to path
-11. In MatLab command window type `pathtool' and add fhlin_toolbox and all subfolders to path
+11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
 
 13. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
 14. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
