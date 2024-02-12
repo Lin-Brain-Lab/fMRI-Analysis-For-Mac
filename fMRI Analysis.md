@@ -71,12 +71,12 @@
 <img width="664" alt="Screen Shot 2024-01-29 at 4 13 02 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/d0d96933-6b5a-4f3c-a825-5bb01f2add26">
 
 3. `etc_render_fsbrain('subject','s026')`
-4. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path)
+4. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 
-4.i. Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
-4.ii. Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well
+
+Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well.
 <img width="490" alt="Screen Shot 2024-01-29 at 4 50 27 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9d72f5bf-ac0f-46eb-9dec-e2500b0eb11b">
 
 5. If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
@@ -88,14 +88,13 @@
 4. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
 5. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` to get to unpack folder of subject
 6. `cat register.dat` to see contents of register.dat file
-<img width="485" alt="Screen Shot 2024-01-31 at 1 44 54 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/42aac409-427a-42ac-98bd-914a181c3100">
+<img width="425" alt="Screen Shot 2024-02-12 at 12 31 18 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/5f03dc50-c02e-480f-b3f9-dc4362c669c7">
+
 
 7. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
 8. In MatLab `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
 9. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
-10. In MatLab go to fhlin_toolbox folder and add all folders to path
-11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
-
-13. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
-14. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
-15. 
+10. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
+11. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
+12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
+    
