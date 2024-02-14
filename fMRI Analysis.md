@@ -82,6 +82,7 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 5. If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
 
 ## Event-Related fMRI Analysis (https://github.com/fahsuanlin/labmanual/wiki/11.-fMRI-analysis)
+### Map fMRI time series from EPI volumnes on cortical surfaces
 1. There should be a register.dat file from the co-registration step for your subject
 2. `tcsh`
 3. `source .cshrc`
@@ -97,10 +98,39 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 <img width="462" alt="Screen Shot 2024-02-14 at 12 38 21 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/d648a7df-6d3f-41fd-85ad-70b6bc39802d">
 
 9. In MatLab `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
-10. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
+10. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
 11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
-12. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
-13. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
-14. If you get an error `/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
-15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032
+12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
+13. If you get an error `/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
+14. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032
+
+### Transform fMRI time series from individual's native space to MNI305 template
+1. Download MatLab script file from step 0.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
+2. Double click on the file for it to open in MatLab (but remember you opened the MatLab application in terminal) and change `target_dir='/Users/fhlin/workspace/seeg/s026/fmri_analysis';` to `target_dir='/Users/jessica/Subjects/s026';`
+3. Make sure you are in the unpack directory
+4. Should say "mri_vol2vol done" when complete
+
+### Get Confound Information
+#### Get confound information from motion correction
+1. Download MatLab script file from step 1.1 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
+2. Change `bold_dir='/space_lin2/fhlin/7t_music_skku/LAM_AUD_BHC_simple/unpack';` to `bold_dir='/Users/jessica/Subjects/s026/mri/orig/unpack';`
+3. Change `dirs={
+'bold/007';
+'bold/008';
+'bold/009';
+'bold/018';
+'bold/019';
+'bold/020';
+'bold/021';
+};
+`
+to 
+`dirs={
+'bold/032'
+};` the bold number will change depending on subject, in this case it is 32
+4. Should say "get_mc_regressor done" when complete
+
+#### Get confound information from non-gray matter time series
+1. Download MatLab script file from step 1.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
+2. 
     
