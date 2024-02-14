@@ -102,4 +102,5 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 12. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
 13. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
 14. If you get an error `/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
+15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032
     
