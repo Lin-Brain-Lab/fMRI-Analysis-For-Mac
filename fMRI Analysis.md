@@ -92,7 +92,7 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 
 
 7. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
-8. In MatLab `setenv ('SUBJECTS_DIR','Users/jessica/Subjects');`
+8. In MatLab `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
 9. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to toolbox
 10. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
 11. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
