@@ -101,5 +101,5 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
 12. Double click on the MatLab script file you downloaded and change `file_register='../../register.dat';` to `file_register='/Users/jessica/Subjects/s026/mri/orig/unpack/register.dat';` 
 13. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
-14. If you get an error '/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory' try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
+14. If you get an error `/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
     
