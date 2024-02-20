@@ -132,5 +132,9 @@ to
 
 #### Get confound information from non-gray matter time series
 1. Download MatLab script file from step 1.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
-2. 
+2. Change `target_subject='s006';` to `target_subject='s026';` (the subject ID you are working on)
+3. Change `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to ` 'Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file)
+4. 
+
+
     
