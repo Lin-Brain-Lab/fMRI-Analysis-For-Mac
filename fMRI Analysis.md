@@ -165,10 +165,9 @@ to
 4. Change `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to `file_overlay_vol='../unpack/bold/032/f.mgz';` (location of your f.mgz file). If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
 5. Change `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to `setenv('SUBJECTS_DIR','/Users/jessica/Subjects/');` (location of your subjects folder)
 6. Change `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to `mri=MRIread(sprintf('/Users/jessica/Subjects/%s/mri/orig.mgz',subject));` (location of your orig.mgz file) and run
-7. If done successfully, you should have a output of a pop-up titled "Figure 1"
+7. If done successfully, you should have a output of a pop-up titled "Figure 1" you should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
 <img width="559" alt="Screen Shot 2024-02-21 at 3 18 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/81096134-6085-41f2-a3f5-94f2f4c75231">
 
-you should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
 8. To visualize the results 
 
 
