@@ -133,8 +133,22 @@ to
 #### Get confound information from non-gray matter time series
 1. Download MatLab script file from step 1.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
 2. Change `target_subject='s006';` to `target_subject='s026';` (the subject ID you are working on)
-3. Change `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to ` 'Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file)
-4. 
+3. Change `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to `'./bold/032/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file) for file_register_source and file_regression_source (lines 5 & 9)
+4. Change `'aparc+aseg_fmcprstc_005.nii'` to `'aparc+aseg_fmcprstc_032.nii'` (dicom scan number, which is shown in bold folder)
+5. Change `'regressor_wm_ventrical_005.mat';` to `'regressor_wm_ventrical_032.mat';`
+6. Make sure your directory in matlab is in your subjects unpack folder & run
+7. If done successfully, output should be "DONE!" and you should have a aparc+aseg_fmcprstc_026.nii and regressor_wm_ventrical_026.mat in your unpack folder
 
+### Prepare Stimulus Onset
+1. Download MatLab script file from step 2 (on FH GitHib page 11) and add file to fhlin_toolbox folder 
+2. On the right hand side under scripts also download 'SOA_s026.mat' from FH Github and put into unpack folder for subject you are working on
+3. Double click on the 'make_soa.m' file in the fhlin_toolbox folder for it to open in MatLab
+4. If done successfully, you should have a file 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
+
+### General Linear Modeling of the fMRI Time Series
+1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
+2. Under 'file_stc' make sure the only line there is the path to your s026_2_fsaverage_sfmcprstc file, `'../unpack/bold/032/s026_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present (Ex. `%    '../fmri_data/unpack/bold/030/s026_2_fsaverage_sfmcprstc';`) Note: Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
+3. Under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_032.mat';`
+4. 
 
     
