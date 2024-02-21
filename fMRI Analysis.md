@@ -165,12 +165,16 @@ to
 4. Change `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to `file_overlay_vol='../unpack/bold/032/f.mgz';` (location of your f.mgz file). If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
 5. Change `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to `setenv('SUBJECTS_DIR','/Users/jessica/Subjects/');` (location of your subjects folder)
 6. Change `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to `mri=MRIread(sprintf('/Users/jessica/Subjects/%s/mri/orig.mgz',subject));` (location of your orig.mgz file) and run
-7. If done successfully, you should have a output of a pop-up titled "Figure 1" you should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
+7. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
 <img width="559" alt="Screen Shot 2024-02-21 at 3 18 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/81096134-6085-41f2-a3f5-94f2f4c75231">
+<img width="1104" alt="Screen Shot 2024-02-21 at 3 36 15 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/51737a08-0575-4c25-b03a-06f5c05b50a9">
+
 
 8. To visualize the results enter the code `
 [stc,v]=inverse_read_stc('fmri_surf_soa_glm_h01_tstat-lh.stc');
-etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` in the MatLab command window
-
+etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4" 
+<img width="1059" alt="Screen Shot 2024-02-21 at 3 38 02 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/1d5a60a4-f003-4438-93d3-58a520f4f801">
+<img width="794" alt="Screen Shot 2024-02-21 at 3 41 44 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/30a689f4-0d1d-4f55-922a-b9704e037604">
+<img width="696" alt="Screen Shot 2024-02-21 at 3 42 13 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/cc42a8e4-1e88-43c1-8e7d-183430bc8a7b">
 
     
