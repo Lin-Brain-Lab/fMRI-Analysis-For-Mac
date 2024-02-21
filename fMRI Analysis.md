@@ -98,21 +98,21 @@ Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbo
 <img width="462" alt="Screen Shot 2024-02-14 at 12 38 21 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/d648a7df-6d3f-41fd-85ad-70b6bc39802d">
 
 9. In MatLab `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
-10. Download MatLab script file from step 0.1 (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
+10. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
 11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
 12. Make sure you are in /Users/jessica/Subjects/s026/mri/orig/unpack folder then run
 13. If you get an error `/Users/jessica/Subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
 14. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032
 
 ### Transform fMRI time series from individual's native space to MNI305 template
-1. Download MatLab script file from step 0.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
+1. Download MatLab script file from step 0.2 called s026_vol2vol.m (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
 2. Double click on the file for it to open in MatLab (but remember you opened the MatLab application in terminal) and change `target_dir='/Users/fhlin/workspace/seeg/s026/fmri_analysis';` to `target_dir='/Users/jessica/Subjects/s026';`
 3. Make sure you are in the unpack directory
 4. Should say "mri_vol2vol done" when complete
 
 ### Get Confound Information
 #### Get confound information from motion correction
-1. Download MatLab script file from step 1.1 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
+1. Download MatLab script file from step 1.1 called get_mc_regressor.m (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
 2. Change `bold_dir='/space_lin2/fhlin/7t_music_skku/LAM_AUD_BHC_simple/unpack';` to `bold_dir='/Users/jessica/Subjects/s026/mri/orig/unpack';`
 3. Change `dirs={
 'bold/007';
@@ -131,7 +131,7 @@ to
 4. Should say "get_mc_regressor done" when complete
 
 #### Get confound information from non-gray matter time series
-1. Download MatLab script file from step 1.2 (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
+1. Download MatLab script file from step 1.2 get_ventricle_wm_regressor.m (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
 2. Change `target_subject='s006';` to `target_subject='s026';` (the subject ID you are working on)
 3. Change `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to `'./bold/032/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file) for file_register_source and file_regression_source (lines 5 & 9)
 4. Change `'aparc+aseg_fmcprstc_005.nii'` to `'aparc+aseg_fmcprstc_032.nii'` (dicom scan number, which is shown in bold folder)
@@ -140,7 +140,7 @@ to
 7. If done successfully, output should be "DONE!" and you should have a aparc+aseg_fmcprstc_026.nii and regressor_wm_ventrical_026.mat in your unpack folder
 
 ### Prepare Stimulus Onset
-1. Download MatLab script file from step 2 (on FH GitHib page 11) and add file to fhlin_toolbox folder 
+1. Download MatLab script file from step 2 called make_soa.m (on FH GitHib page 11) and add file to fhlin_toolbox folder 
 2. On the right hand side under scripts also download 'SOA_s026.mat' from FH Github and put into unpack folder for subject you are working on
 3. Double click on the 'make_soa.m' file in the fhlin_toolbox folder for it to open in MatLab
 4. If done successfully, you should have a file 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
@@ -149,6 +149,7 @@ to
 1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
 2. Under 'file_stc' make sure the only line there is the path to your s026_2_fsaverage_sfmcprstc file, `'../unpack/bold/032/s026_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present (Ex. `%    '../fmri_data/unpack/bold/030/s026_2_fsaverage_sfmcprstc';`) Note: Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
 3. Under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_032.mat';`
-4. 
+4. In line 44 change `n_run=length(erfmri_para);` to `n_run=1 %length(erfmri_para);` and run
+5. If done successfully
 
     
