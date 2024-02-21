@@ -168,7 +168,9 @@ to
 7. If done successfully, you should have a output of a pop-up titled "Figure 1" you should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
 <img width="559" alt="Screen Shot 2024-02-21 at 3 18 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/81096134-6085-41f2-a3f5-94f2f4c75231">
 
-8. To visualize the results 
+8. To visualize the results enter the code `
+[stc,v]=inverse_read_stc('fmri_surf_soa_glm_h01_tstat-lh.stc');
+etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` in the MatLab command window
 
 
     
