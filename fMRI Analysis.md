@@ -177,4 +177,6 @@ to
 <img width="794" alt="Screen Shot 2024-02-21 at 3 41 44 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/30a689f4-0d1d-4f55-922a-b9704e037604">
 <img width="696" alt="Screen Shot 2024-02-21 at 3 42 13 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/cc42a8e4-1e88-43c1-8e7d-183430bc8a7b">
 
-    
+9. To view a heatmap of expected fMRI activity `imagesc(contrast)` where the X-axis is condition and Y-axis is time scale. Compare all the columns iteratively across all brain locations to see what columns match and get a map of how much the observed brain dynamics match the hypothesized model
+
+<img width="546" alt="Screen Shot 2024-02-27 at 11 38 00 AM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/eb2d8f96-fdaf-4561-bca8-b0bb356e9f69">
