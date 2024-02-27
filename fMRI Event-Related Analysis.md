@@ -1,7 +1,6 @@
-## Should begin with steps from 'fMRI pre-processing'
-
 ## Event-Related fMRI Analysis (https://github.com/fahsuanlin/labmanual/wiki/11.-fMRI-analysis)
 ### Map fMRI time series from EPI volumnes on cortical surfaces
+NOTE: You should begin this analysis with steps from the fMRI pre-processing page
 1. There should be a register.dat file from the co-registration step for your subject
 2. `tcsh`
 3. `source .cshrc`
