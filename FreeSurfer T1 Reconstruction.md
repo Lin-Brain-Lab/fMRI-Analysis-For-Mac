@@ -1,8 +1,6 @@
 # FreeSurfer-T1-Reconstruction-For-Mac-Locally
 ### Setting up environment: 
 
-NOTE: Begin this analysis with following the steps from the 'fMRI Pre-Processing' page
-
 1. Download subject data from server to your local drive.
 2. `tcsh`
 3. `vi .cshrc`
