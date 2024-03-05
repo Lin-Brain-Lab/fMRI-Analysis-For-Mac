@@ -1,10 +1,12 @@
 # FreeSurfer-T1-Reconstruction-For-Mac-Locally
 ### Setting up environment: 
-1. Begin this analysis with following the steps from the 'fMRI Pre-Processing' page
-2. Download subject data from server to your local drive.
-3. `tcsh`
-4. `vi .cshrc`
-5. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
+
+NOTE: Begin this analysis with following the steps from the 'fMRI Pre-Processing' page
+
+1. Download subject data from server to your local drive.
+2. `tcsh`
+3. `vi .cshrc`
+4. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
 
 `setenv FREESURFER_HOME /Applications/freesurfer`
 
@@ -40,9 +42,9 @@
 
 `alias robinsri ssh 172.20.151.238 -l fhlin`
 
-6. ESC + wq:
-7. `source .cshrc`
-8. `freeview &`
+5. ESC + wq:
+6. `source .cshrc`
+7. `freeview &`
 
 #### Freeview should now open.
 
