@@ -1,5 +1,5 @@
 ## Introduction
-FreeSurfer recontruction locally for mac starts from the beginning of setting up your FreeSurfer environment. Prerequsites of this include having access to the server (Via Cisco ANYconnect and Cyberduck) to access files, and having FreeSurfer with the appropriate licence installed.
+FreeSurfer recontruction locally for mac starts from the beginning of setting up your FreeSurfer environment. Prerequsites of this include having access to the server (Via Cisco ANYconnect and Cyberduck) to access files, having FreeSurfer with the appropriate licence installed, and installing the fhlin_toolbox.
 
 ## Setting up environment: 
 
