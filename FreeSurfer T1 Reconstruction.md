@@ -1,10 +1,9 @@
 # FreeSurfer-T1-Reconstruction-For-Mac-Locally
 ### Setting up environment: 
 
-1. Download subject data from server to your local drive.
-2. `tcsh`
-3. `vi .cshrc`
-4. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
+1. `tcsh`
+2. `vi .cshrc`
+3. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
 
 `setenv FREESURFER_HOME /Applications/freesurfer`
 
@@ -40,9 +39,9 @@
 
 `alias robinsri ssh 172.20.151.238 -l fhlin`
 
-5. ESC + wq:
-6. `source .cshrc`
-7. `freeview &`
+4. ESC + wq:
+5. `source .cshrc`
+6. `freeview &`
 
 #### Freeview should now open.
 
