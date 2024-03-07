@@ -94,7 +94,8 @@ to
 
 `etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` 
 
-in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4" 
+in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Change lime 4 in MatLab code and code above to 'rh' to see right hemisphere.  
+
 <img width="538" alt="Screen Shot 2024-03-06 at 2 02 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/20745e96-4d0c-48e4-90ee-fbea01585429">
 <img width="794" alt="Screen Shot 2024-02-21 at 3 41 44 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/30a689f4-0d1d-4f55-922a-b9704e037604">
 <img width="696" alt="Screen Shot 2024-02-21 at 3 42 13 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/cc42a8e4-1e88-43c1-8e7d-183430bc8a7b">
