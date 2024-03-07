@@ -5,7 +5,7 @@
 4. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time)
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
-1. `cd cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
+1. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
 2. `vi sessid` folder name, type "unpack" into editor (ESC + :wq to save)
 3. `vi sessdir` give path to unpack folder /Users/jessica/Subjects/s026/mri/orig (in this case it is in mri and orig folder but should be in its own fmri folder)
 4. `ls bold/032` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
