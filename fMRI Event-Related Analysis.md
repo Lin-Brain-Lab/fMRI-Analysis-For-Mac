@@ -94,7 +94,7 @@ to
 
 `etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` 
 
-in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Change lime 4 in MatLab code and code above to 'rh' to see right hemisphere.  
+in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Change lime 4 in MatLab code and code above to 'rh' to see right hemisphere  
 
 <img width="538" alt="Screen Shot 2024-03-06 at 2 02 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/20745e96-4d0c-48e4-90ee-fbea01585429">
 <img width="794" alt="Screen Shot 2024-02-21 at 3 41 44 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/30a689f4-0d1d-4f55-922a-b9704e037604">
@@ -103,3 +103,5 @@ in the MatLab command window. You should get a pop-up "Figure 2," and if you cli
 10. To view a heatmap of expected fMRI activity `imagesc(contrast)` where the X-axis is condition and Y-axis is time scale. Compare all the columns iteratively across all brain locations to see what columns match and get a map of how much the observed brain dynamics match the hypothesized model.
 
 <img width="546" alt="Screen Shot 2024-02-27 at 11 38 00 AM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/eb2d8f96-fdaf-4561-bca8-b0bb356e9f69">
+
+11. Repeat for other subjects for group-level analysis, and this is the end of event-realted analysis
