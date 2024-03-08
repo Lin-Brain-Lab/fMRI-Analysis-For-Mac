@@ -1,17 +1,17 @@
 ## Preparing fMRI Data for Pre-Processing 
 1. Make a folder on your local computer as such: Subjects/s026/fmri_data/dicom. It is important to make a seperate fMRI folder to house this dicom folder as the mri folder would have another dicom folder with structural data in it
-2. Start with steps 1-10 from the "FreeSurfer Reconstruction" page (in this case take the dicom folder data from /space_lin2/fhlin/seeg/s026/fmri_data/dicom and remaining data from /space_lin2/fhlin/seeg/subjects/s026)
+2. Download the dicom folder data from /space_lin2/fhlin/seeg/s026/fmri_data/dicom and remaining data from /space_lin2/fhlin/seeg/subjects/s026
 3. `tcsh`
 4. `source .cshrc`
 5. `mri_info` checks if all freesurfer items are there
-7. `echo $SUBJECTS_DIR` sees what path your subjects are in 
+6. `echo $SUBJECTS_DIR` sees what path your subjects are in 
+7. `setenv SUBJECTS_DIR $PWD`
+8. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
 9. `cd /Users/jessica/Subjects/s026/fmri_data` get into right directory 
-10. `setenv SUBJECTS_DIR $PWD`
-11. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
-12. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
-13. `cd unpack/`
-4. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
-5. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
+10. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
+11. `cd unpack/`
+12. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
+13. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
 1. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
