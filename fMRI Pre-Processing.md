@@ -11,14 +11,16 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
 3. `tcsh`
 4. `source .cshrc`
 5. `mri_info` checks if all freesurfer items are there
-6. `echo $SUBJECTS_DIR` sees what path your subjects are in 
-8. `setenv SUBJECTS_DIR $PWD`
-9. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects` set your subject directory to the path your subject folder is in
-10. `cd /Users/jessica/Subjects/s026/fmri_data` get into right directory 
-11. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
-12. `cd unpack/`
-13. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
+6. `setenv SUBJECTS_DIR $PWD`
+7. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects` set your subject directory to the path your subject folder is in 
+8. `echo $SUBJECTS_DIR` checks what path your subject directory is in
+9. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` get into right directory 
+10. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
+11. `cd unpack/`
+12. Create a unpack.rule text document and write “10 bold nii f.nii” where number changes based on run and is given based on the name of the folder in the file path /Users/jessica/data_analysis/seeg/subjects/s025/mri/orig/unpack/3danat/010
+13. `mv unpack.rule.txt unpack.rule` to rename unpack.rule.txt to unpack.rule
 14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
+    
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
 1. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
