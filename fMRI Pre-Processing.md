@@ -1,17 +1,24 @@
 ## Preparing fMRI Data for Pre-Processing 
-1. Make a folder on your local computer as such: Subjects/s026/fmri_data/dicom. It is important to make a seperate fMRI folder to house this dicom folder as the mri folder would have another dicom folder with structural data in it
-2. Download the dicom folder data from /space_lin2/fhlin/seeg/s026/fmri_data/dicom and remaining data from /space_lin2/fhlin/seeg/subjects/s026
+1. Make a folder on your local computer as such: data_analysis/seeg/s025/fmri_data/dicom (It is important to make a seperate fMRI folder to house this dicom folder as the mri folder would have another dicom folder with structural data in it)
+2. Download the dicom folder data from /space_lin2/fhlin/seeg/s026/fmri_data/dicom into /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom
+   
+<img width="1209" alt="Screen Shot 2024-03-08 at 2 31 33 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/231d1e2c-5ab4-489c-81ee-a5d9966ba1ec">
+
+Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/jessica/data_analysis/seeg/subjects/s026
+
+<img width="1208" alt="Screen Shot 2024-03-08 at 2 31 56 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/06a4a4e1-3a81-439a-996e-746ccbdc20b4">
+
 3. `tcsh`
 4. `source .cshrc`
 5. `mri_info` checks if all freesurfer items are there
 6. `echo $SUBJECTS_DIR` sees what path your subjects are in 
-7. `setenv SUBJECTS_DIR $PWD`
-8. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
-9. `cd /Users/jessica/Subjects/s026/fmri_data` get into right directory 
-10. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
-11. `cd unpack/`
-12. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
-13. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
+8. `setenv SUBJECTS_DIR $PWD`
+9. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects` set your subject directory to the path your subject folder is in
+10. `cd /Users/jessica/Subjects/s026/fmri_data` get into right directory 
+11. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
+12. `cd unpack/`
+13. Create a unpack.rule text document and write “32 bold nii f.nii” where number changes based on run and is given based on the output of the previous steps
+14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
 1. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
