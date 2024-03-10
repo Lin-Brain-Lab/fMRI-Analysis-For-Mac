@@ -20,29 +20,34 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
 12. Create a unpack.rule text document and write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028)
 13. `mv unpack.rule.txt unpack.rule` to rename unpack.rule.txt to unpack.rule
 14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
+15. If done successfully, the output should be `unpacksdcmdir Done`
     
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
-1. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` go to unpack folder for the subject you are working on
-2. `vi sessid` folder name, type "unpack" into editor (ESC + :wq to save)
-3. `vi sessdir` give path to unpack folder /Users/jessica/Subjects/s026/mri/orig (in this case it is in mri and orig folder but should be in its own fmri folder)
-4. `ls bold/032` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
+1. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` go to unpack folder for the subject you are working on
+2. `vi sessid` folder name, type "unpack" into editor (press A key to edit, then ESC + :wq to save)
+3. `vi sessdir` give path to unpack folder /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack 
+4. `ls bold/028` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
 5. `mktemplate-sess -sf sessid -df sessdir` output should be "mktemplate-sess completed"
 ### Motion Correction 
 1. `mc-sess -sf sessid -df sessdir -per-run` output should be "mc-sess completed SUCCESSFULLY"
-2. `ls bold/032` should have more fmcpr files for motion correction
-3. `freeview bold/032/f.nii` can open f.nii (before motion correction) and fmcpr.nii.gz (after motion correction) in freeview
+2. `ls bold/028` should have more fmcpr files for motion correction
+3. `freeview bold/028/f.nii` can open f.nii (before motion correction) and fmcpr.nii.gz (after motion correction) in freeview
 4. `Control + Z` to suspend in freeview, then `bg` to keep in background
+   
+<img width="1209" alt="Screen Shot 2024-03-10 at 12 08 51 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/fe13f4f5-7ebb-4716-b857-acb820caeb28">
+
 ### Slice-Timing Correction 
 1. `stc-sess -sf sessid -df sessdir -i fmcpr -o fmcprstc -so siemens` output should be "stc-sess Done"
 ### Spatial Smoothing
 1. `spatialsmooth-sess -sf sessid -df sessdir -i fmcprstc -o sfmcprstc -fwhm 8 -no-mask -outfmt nii` term fwhm (full width half mass) determines how much smoothing there is, we set it at 8 mm which is standard. Output should be "spatiallysmooth-sess Done"
-2. `freeview bold/032/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 032/sfmcprstc.nii)
+2. `freeview bold/028/sfmcprstc.nii` to view image in freeview (get file name from output: Saving to 028/sfmcprstc.nii)
+   
+<img width="1209" alt="Screen Shot 2024-03-10 at 12 15 15 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/328bff77-3a6d-49e1-8c8d-c5df2095a44f">
 
 ## Co-Registration
-1. `fslregister --s s026 --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm`
-2. Output from previous step: to check results, run: tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig
-3. Run `tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig` and freeview should open
+1. `fslregister --s s025 --mov bold/028/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm`
+2. Output from previous step: to check results, run: `tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig` and freeview should open
 
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
 1. Download MNE
