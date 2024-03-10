@@ -17,7 +17,7 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
 9. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` get into right directory 
 10. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
 11. `cd unpack/`
-12. Create a unpack.rule text document and write “10 bold nii f.nii” where number changes based on run and is given based on the name of the folder in the file path /Users/jessica/data_analysis/seeg/subjects/s025/mri/orig/unpack/3danat/010
+12. Create a unpack.rule text document and write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028)
 13. `mv unpack.rule.txt unpack.rule` to rename unpack.rule.txt to unpack.rule
 14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time, NOTE: `unpacksdcmdir` converts individual slices of dicom file into volume to one file)
     
