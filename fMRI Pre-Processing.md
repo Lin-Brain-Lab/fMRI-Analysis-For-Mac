@@ -81,12 +81,13 @@ NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer
 5. `mne_make_movie` output should be mne_make_movie options
 7. If you have an error at this point, try updating your toolbox by going to the fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable. If there is an update (output after git remote update which mentions file and type of update) `git pull` to receive update.
 ### In MatLab
-1. `setenv('SUBJECTS_DIR','/Users/jessica/Subjects')`
-2. You should be in the fhlin_toolbox folder. On the side tab bar 'current folder' select and add the 'codes,' 'images,' and 'scripts' folder, right click then 'add to path' then 'selected folders and subfolders'
+1. `/Applications/MATLAB_R2023b.app/bin/matlab &` open MatLab in terminal
+2. `setenv('SUBJECTS_DIR','/Users/jessica/Subjects')`
+3. You should be in the fhlin_toolbox folder. On the side tab bar 'current folder' select and add the 'codes,' 'images,' and 'scripts' folder, right click then 'add to path' then 'selected folders and subfolders'
 <img width="664" alt="Screen Shot 2024-01-29 at 4 13 02 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/d0d96933-6b5a-4f3c-a825-5bb01f2add26">
 
-3. `etc_render_fsbrain('subject','s026')`
-4. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
+4. `etc_render_fsbrain('subject','s026')`
+5. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
