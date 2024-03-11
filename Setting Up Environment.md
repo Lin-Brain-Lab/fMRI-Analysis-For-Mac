@@ -1,5 +1,14 @@
 ## Introduction
-FreeSurfer recontruction locally for mac starts from the beginning of setting up your FreeSurfer environment. Prerequsites of this include having access to the server (Via Cisco ANYconnect and Cyberduck) to access files, having FreeSurfer with the appropriate licence installed, and installing the fhlin_toolbox.
+FreeSurfer recontruction locally for mac starts from the beginning of setting up your environment. 
+
+## Installation prerequsites 
+1. Access to the server: Cisco ANYconnect https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html and Cyberduck https://cyberduck.io
+2. FreeSurfer https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
+3. FSL https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation
+4. MNE https://mne.tools/stable/install/mne_c.html
+5. fhlin_toolbox https://github.com/fahsuanlin/fhlin_toolbox
+
+Ensure the appropriate license is intalled (if applicable)
 
 ## Setting up environment: 
 
@@ -43,9 +52,7 @@ FreeSurfer recontruction locally for mac starts from the beginning of setting up
 
 4. ESC + wq:
 5. `source .cshrc`
-6. `freeview &`
-
-#### Freeview should now open.
+6. `freeview &` freeview should now open
 
 ## Making screens 
 Some commands are important for making screens to process data remotely as it often takes hours for a reconstruction to complete.
