@@ -50,37 +50,32 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
 1. Download MNE
 2. `tcsh`
-3. `vi .cshrc` make sure you have the correct environment set up that looks like this (ensure MNE roots are correct for you computer):
+3. `vi .cshrc` make sure you have the correct environment set up that looks like this:
 
-`setenv FREESURFER_HOME /Applications/freesurfer/7.4.1`
+NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location (also seen in setting up environment page):
 
-`source $FREESURFER_HOME/SetUpFreeSurfer.csh`
+    setenv FREESURFER_HOME /Applications/freesurfer/7.4.1
+    source $FREESURFER_HOME/SetUpFreeSurfer.csh
+    source $FREESURFER_HOME/FreeSurferEnv.csh
 
-`source $FREESURFER_HOME/FreeSurferEnv.csh`
+    setenv MATLAB_ROOT /Applications/MATLAB_R2023b.app
+    setenv MNE_ROOT /Applications/MNE-2.7.4-3378-MacOSX-x86_64
+    source $MNE_ROOT/bin/mne_setup
+    
+    setenv DYLD_LIBRARY_PATH /Applications/MNE-2.7.4-3378-MacOSX-x86_64/lib:/opt/X11/lib/flat_namespace
+    #setenv DYLD_LIBRARY_PATH /usr/local/lib/libquicktime.dylib
 
-`setenv MATLAB_ROOT /Applications/MATLAB_R2023b.app`
+    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/bin )
+    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/lib )
+    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/include )
+    set path = ( $path /Applications/MRIcron.app/Contents/Resources )
 
-`setenv MNE_ROOT /Applications/MNE-2.7.4-3378-MacOSX-x86_64`
+    alias MATLAB /Applications/MATLAB_R2023b.app/bin/matlab
+    setenv SUBJECTS_DIR /Users/jessica/Subjects
 
-`source $MNE_ROOT/bin/mne_setup`
+    alias robin ssh 142.76.1.189 -l fhlin
+    alias robinsri ssh 172.20.151.238 -l fhlin
 
-`setenv DYLD_LIBRARY_PATH /Applications/MNE-2.7.4-3378-MacOSX-x86_64/lib:/opt/X11/lib/flat_namespace`
-
-`set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/bin )`
-
-`set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/lib )`
-
-`set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/include )`
-
-`set path = ( $path /Applications/MRIcron.app/Contents/Resources )`
-
-`alias MATLAB /Applications/MATLAB_R2023b.app/bin/matlab`
-
-`setenv SUBJECTS_DIR /Users/jessica/Subjects`
-
-`alias robin ssh 142.76.1.189 -l fhlin`
-
-`alias robinsri ssh 172.20.151.238 -l fhlin`
 
 4. `source .cshrc`
 5. `mne_make_movie` output should be mne_make_movie options
