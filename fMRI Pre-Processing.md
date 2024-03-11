@@ -23,9 +23,8 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
     
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
-1. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack` make sure you are in the unpack folder for the subject you are working on
-2. `vi sessid` folder name, type "unpack" into editor (press A key to edit, then ESC + :wq to save)
-3. `vi sessdir` give path to unpack folder /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack 
+2. `vi sessid` folder name, type "unpack" into editor (press A key to edit, then ESC + :wq to save), make sure your current directory is in the unpack folder
+3. `vi sessdir` give path to unpack folder /Users/jessica/data_analysis/seeg/s025/fmri_data
 4. `ls bold/028` double check if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
 5. `mktemplate-sess -sf sessid -df sessdir` output should be "mktemplate-sess completed"
 ### Motion Correction 
