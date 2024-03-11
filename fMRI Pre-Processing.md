@@ -79,8 +79,7 @@ NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer
 
 4. `source .cshrc`
 5. `mne_make_movie` output should be mne_make_movie options
-6. `git clone https://github.com/fahsuanlin/fhlin_toolbox.git` to get Fa-Hsuans toolbox if not already installed or updated ([fahsuanlin GitHub page](https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git)https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git) output should be 'done'
-7. In fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable. If there is an update (output after git remote update which mentions file and type of update) `git pull` to receive update.
+7. If you have an error at this point, try updating your toolbox by going to the fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable. If there is an update (output after git remote update which mentions file and type of update) `git pull` to receive update.
 ### In MatLab
 1. `setenv('SUBJECTS_DIR','/Users/jessica/Subjects')`
 2. You should be in the fhlin_toolbox folder. On the side tab bar 'current folder' select and add the 'codes,' 'images,' and 'scripts' folder, right click then 'add to path' then 'selected folders and subfolders'
