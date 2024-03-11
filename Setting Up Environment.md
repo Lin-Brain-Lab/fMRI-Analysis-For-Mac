@@ -54,25 +54,40 @@ Ensure the appropriate license is intalled (if applicable)
 5. `source .cshrc`
 6. `freeview &` freeview should now open
 
-## Making screens 
-Some commands are important for making screens to process data remotely as it often takes hours for a reconstruction to complete.
+## MatLab startup document 
+In the matlab folder on your computer create a startup.m file with the following content (change location of FSL based on where your folder is)
 
-`screen -ls` checks to see if there are any open screens associated with your login
+%------------ FreeSurfer -----------------------------%
+fshome = getenv('FREESURFER_HOME');
+fsmatlab = sprintf('%s/matlab',fshome);
+if (exist(fsmatlab) == 7)
+    addpath(genpath(fsmatlab));
+end
+clear fshome fsmatlab;
+%-----------------------------------------------------%
 
-`screen` opens a new screen
+%------------ FreeSurfer FAST ------------------------%
+fsfasthome = getenv('FSFAST_HOME');
+fsfasttoolbox = sprintf('%s/toolbox',fsfasthome);
+if (exist(fsfasttoolbox) == 7)
+    path(path,fsfasttoolbox);
+end
+clear fsfasthome fsfasttoolbox;
 
-`screen -r` enter screen number, to reconnect to screen 
+%---------------------MNE Home-------------------------%
+mnehome = getenv('MNE_ROOT');
+mnematlab = sprintf('%s/share/matlab',mnehome);
+if (exist(mnematlab) == 7)
+    path(path,mnematlab);
+end
+clear mnehome mnematlab;
 
-CTRL + A then D to exit from screen
+%---------------------FSL Setup-----------------------%
+setenv( 'FSLDIR', '/Users/jessica/fsl' );
+setenv('FSLOUTPUTTYPE', 'NIFTI_GZ');
+fsldir = getenv('FSLDIR');
+fsldirmpath = sprintf('%s/etc/matlab',fsldir);
+path(path, fsldirmpath);
+clear fsldir fsldirmpath;
 
-CTRL + A then K to kill the screen
-
-## Common Errors 
-If an error occurs with reading the dicom files (Ex. ERROR: reading ../dicom/EEGFMRI_WM_S004.MR.RESEARCH_FHLIN.0037.0001.2023.02.24.17.53.54.227018.233311136.IMA tag 28 30) try installing XQuartz.
-
-## Remote Update fhlin_toolbox
-1. `git clone https://github.com/fahsuanlin/fhlin_toolbox.git` to get Fa-Hsuans toolbox if not already installed or updated ([fahsuanlin GitHub page](https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git)https://github.com/fahsuanlin/labmanual/wiki/15.-Use-toolbox-by-git) output should be 'done'
-2. In fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable. If there is an update (output after git remote update which mentions file and type of update) `git pull` to receive update.
-
-## Copying Folders Using Terminal
-`cp -r /Applications/freesurfer/7.4.1/subjects/fsaverage* /Users/jessica/Subjects/` the first term is current folder location, the second is where you want it to go. This is useful when trying to avoid softlinking as that can cause pathing errors downstream.
+<img width="790" alt="Screen Shot 2024-03-11 at 2 00 49 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/79e4c8b6-5eb0-4d21-ad19-5f344125d9ff">
