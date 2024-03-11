@@ -44,8 +44,8 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
 <img width="1209" alt="Screen Shot 2024-03-10 at 12 15 15 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/328bff77-3a6d-49e1-8c8d-c5df2095a44f">
 
 ## Co-Registration
-1. `fslregister --s s025 --mov bold/028/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm`
-2. Output from previous step: to check results, run: `tkregisterfv --mov bold/032/fmcprstc.nii.gz --reg ./register.dat --surf orig` and freeview should open
+1. `fslregister --s s025 --mov bold/028/fmcprstc.nii.gz --reg ./register.dat --maxangle 70 --initxfm` output should be "fslregister Done
+ To check results, run: `tkregisterfv --mov bold/028/fmcprstc.nii.gz --reg ./register.dat --surf orig`"
 
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
 1. Download MNE
