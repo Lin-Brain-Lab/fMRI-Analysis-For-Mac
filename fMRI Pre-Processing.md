@@ -48,7 +48,7 @@ Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/
  To check results, run: `tkregisterfv --mov bold/028/fmcprstc.nii.gz --reg ./register.dat --surf orig`"
 
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
-1. Download MNE
+1. If you have not already, download MNE-C
 2. `tcsh`
 3. `vi .cshrc` make sure you have the correct environment set up that looks like this:
 
