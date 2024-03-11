@@ -2,7 +2,7 @@
 1. Make a folder on your local computer as such: data_analysis/seeg/s025/fmri_data/dicom (It is important to make a seperate fMRI folder to house this dicom folder as the mri folder would have another dicom folder with structural data in it)
 2. Download the dicom folder data from /space_lin2/fhlin/seeg/s026/fmri_data/dicom into /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom
    
-<img width="1209" alt="Screen Shot 2024-03-08 at 2 31 33 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/231d1e2c-5ab4-489c-81ee-a5d9966ba1ec">
+<img width="1219" alt="Screen Shot 2024-03-11 at 11 33 58 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/f7146fc1-5c61-49e7-a5c8-f5165e3851f9">
 
 Download the remaining data from /space_lin2/fhlin/seeg/subjects/s026 to /Users/jessica/data_analysis/seeg/subjects/s026
 
