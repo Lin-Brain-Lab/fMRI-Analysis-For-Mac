@@ -11,9 +11,50 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 
 
 7. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
-8. Create a startup file in matlab to set environment and run (no need to comment out fsl part if you have it)
+8. Create a startup file in matlab to set environment and run 
 
-<img width="462" alt="Screen Shot 2024-02-14 at 12 38 21 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/d648a7df-6d3f-41fd-85ad-70b6bc39802d">
+(also seen in the setting up environment page)
+  
+    %------------ FreeSurfer -----------------------------%
+    fshome = getenv('FREESURFER_HOME');
+  
+    fsmatlab = sprintf('%s/matlab',fshome);
+  
+    if (exist(fsmatlab) == 7)
+       
+        addpath(genpath(fsmatlab));  
+   
+    end
+    
+    clear fshome fsmatlab;
+    
+    %-----------------------------------------------------%
+
+    %------------ FreeSurfer FAST ------------------------%
+    fsfasthome = getenv('FSFAST_HOME');
+    fsfasttoolbox = sprintf('%s/toolbox',fsfasthome);
+    if (exist(fsfasttoolbox) == 7)
+        path(path,fsfasttoolbox);
+    end
+    clear fsfasthome fsfasttoolbox;
+
+
+    %---------------------MNE Home-------------------------%
+    mnehome = getenv('MNE_ROOT');
+    mnematlab = sprintf('%s/share/matlab',mnehome);
+    if (exist(mnematlab) == 7)
+        path(path,mnematlab);
+    end
+    clear mnehome mnematlab;
+
+
+    %---------------------FSL Setup-----------------------%
+    setenv( 'FSLDIR', '/Users/jessica/fsl' );
+    setenv('FSLOUTPUTTYPE', 'NIFTI_GZ');
+    fsldir = getenv('FSLDIR');
+    fsldirmpath = sprintf('%s/etc/matlab',fsldir);
+    path(path, fsldirmpath);
+    clear fsldir fsldirmpath;
 
 9. In MatLab `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
 10. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
