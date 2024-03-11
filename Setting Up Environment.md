@@ -14,7 +14,9 @@ Ensure the appropriate license is intalled (if applicable)
 
 1. `tcsh`
 2. `vi .cshrc`
-3. Copy the following into vi editor (NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
+3. Copy the following into vi editor 
+
+NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and Subject folder location):
 
     setenv FREESURFER_HOME /Applications/freesurfer/7.4.1
     source $FREESURFER_HOME/SetUpFreeSurfer.csh
@@ -23,7 +25,7 @@ Ensure the appropriate license is intalled (if applicable)
     setenv MATLAB_ROOT /Applications/MATLAB_R2023b.app
     setenv MNE_ROOT /Applications/MNE-2.7.4-3378-MacOSX-x86_64
     source $MNE_ROOT/bin/mne_setup
-
+    
     setenv DYLD_LIBRARY_PATH /Applications/MNE-2.7.4-3378-MacOSX-x86_64/lib:/opt/X11/lib/flat_namespace
     #setenv DYLD_LIBRARY_PATH /usr/local/lib/libquicktime.dylib
 
@@ -38,9 +40,9 @@ Ensure the appropriate license is intalled (if applicable)
     alias robin ssh 142.76.1.189 -l fhlin
     alias robinsri ssh 172.20.151.238 -l fhlin
 
-4. ESC + wq:
-5. `source .cshrc`
-6. `freeview &` freeview should now open
+5. ESC + wq:
+6. `source .cshrc`
+7. `freeview &` freeview should now open
 
 ## MatLab startup document 
 In the matlab folder on your computer create a startup.m file with the following content (change location of FSL based on where your folder is)
