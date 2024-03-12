@@ -88,13 +88,18 @@ NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer
 <img width="799" alt="Screen Shot 2024-03-12 at 10 48 38 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/e9912564-0901-4a5a-b535-4bfb111c23d2">
 a825-5bb01f2add26">
 
-5. `etc_render_fsbrain('subject','s025')`
+5. `etc_render_fsbrain('subject','s025')` If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
+
+<img width="491" alt="Screen Shot 2024-03-12 at 11 09 14 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/2b85ad5d-5682-4397-a935-1b3974b2d9c0">
+
+<img width="727" alt="Screen Shot 2024-03-12 at 11 10 33 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/063ab6f9-09fe-4fb5-bb08-535215bdb21d">
+
 6. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
 
-Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well.
+Alternatively, can copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder and add this to the path as well (recommended for a swifter future analysis).
+
 <img width="490" alt="Screen Shot 2024-01-29 at 4 50 27 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9d72f5bf-ac0f-46eb-9dec-e2500b0eb11b">
 
-5. If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
