@@ -1,61 +1,17 @@
 ## Event-Related fMRI Analysis (https://github.com/fahsuanlin/labmanual/wiki/11.-fMRI-analysis)
 ### Map fMRI time series from EPI volumnes on cortical surfaces
 NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' page
-1. There should be a register.dat file from the co-registration step for your subject
+1. There should be a register.dat file from the co-registration step in your subjects fmri_data/unpack folder
 2. `tcsh`
 3. `source .cshrc`
-4. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
-5. `cd /Users/jessica/Subjects/s026/mri/orig/unpack` to get to unpack folder of subject
-6. `cat register.dat` to see contents of register.dat file
+4. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects`
+5. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack` to get to unpack folder of subject
+6. `cat register.dat` to see contents of register.dat file, should look like image below
 <img width="425" alt="Screen Shot 2024-02-12 at 12 31 18 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/5f03dc50-c02e-480f-b3f9-dc4362c669c7">
 
 
 7. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
-8. Create a startup file in matlab to set environment and run 
-
-(also seen in the setting up environment page)
-  
-    %------------ FreeSurfer -----------------------------%
-    fshome = getenv('FREESURFER_HOME');
-  
-    fsmatlab = sprintf('%s/matlab',fshome);
-  
-    if (exist(fsmatlab) == 7)
-       
-        addpath(genpath(fsmatlab));  
-   
-    end
-    
-    clear fshome fsmatlab;
-    
-    %-----------------------------------------------------%
-
-    %------------ FreeSurfer FAST ------------------------%
-    fsfasthome = getenv('FSFAST_HOME');
-    fsfasttoolbox = sprintf('%s/toolbox',fsfasthome);
-    if (exist(fsfasttoolbox) == 7)
-        path(path,fsfasttoolbox);
-    end
-    clear fsfasthome fsfasttoolbox;
-
-
-    %---------------------MNE Home-------------------------%
-    mnehome = getenv('MNE_ROOT');
-    mnematlab = sprintf('%s/share/matlab',mnehome);
-    if (exist(mnematlab) == 7)
-        path(path,mnematlab);
-    end
-    clear mnehome mnematlab;
-
-
-    %---------------------FSL Setup-----------------------%
-    setenv( 'FSLDIR', '/Users/jessica/fsl' );
-    setenv('FSLOUTPUTTYPE', 'NIFTI_GZ');
-    fsldir = getenv('FSLDIR');
-    fsldirmpath = sprintf('%s/etc/matlab',fsldir);
-    path(path, fsldirmpath);
-    clear fsldir fsldirmpath;
-
+8. Run your startup.m (contents of which are in the setting up environment page)
 9. In MatLab `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
 10. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add file to fhlin_toolbox folder (in Matlab scripts Jessica folder)
 11. In MatLab command window type `pathtool` and add fhlin_toolbox and all subfolders to path
