@@ -82,11 +82,12 @@ NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer
 7. If you have an error at this point, try updating your toolbox by going to the fhlin_toolbox directory `git remote update` then `git status` to update, should say 'Your branch is up to date with 'origin/master'' if not updates avaliable. If there is an update (output after git remote update which mentions file and type of update) `git pull` to receive update.
 ### Render Brain In MatLab
 1. `/Applications/MATLAB_R2023b.app/bin/matlab &` open MatLab in terminal
-2. `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects')`
+2. Run startup.m script (contents of which are in the setting up environment page)
 3. `pathtool` add with subfolders the fhlin_toolbox, save and close.
 
 <img width="799" alt="Screen Shot 2024-03-12 at 10 48 38 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/e9912564-0901-4a5a-b535-4bfb111c23d2">
 
+4. `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects')`
 5. `etc_render_fsbrain('subject','s025')` If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
 
 <img width="491" alt="Screen Shot 2024-03-12 at 11 09 14 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/2b85ad5d-5682-4397-a935-1b3974b2d9c0">
