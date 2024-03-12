@@ -7,7 +7,8 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 4. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects`
 5. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack` to get to unpack folder of subject
 6. `cat register.dat` to see contents of register.dat file, should look like image below
-<img width="425" alt="Screen Shot 2024-02-12 at 12 31 18 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/5f03dc50-c02e-480f-b3f9-dc4362c669c7">
+
+<img width="416" alt="Screen Shot 2024-03-12 at 12 07 11 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/3ca48404-0143-49cd-83e0-9b3e1516c77b">
 
 7. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder (can also change file name from s026 to respective subject number)
 8. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
