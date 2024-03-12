@@ -10,7 +10,7 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 
 <img width="416" alt="Screen Shot 2024-03-12 at 12 07 11 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/3ca48404-0143-49cd-83e0-9b3e1516c77b">
 
-7. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder (can also change file name from s026 to respective subject number)
+7. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder NOTE: add respective subject number to file name to avoid downstream pathing errors
 8. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
 9. Run your startup.m (contents of which are in the setting up environment page)
 10. `setenv ('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects');`
