@@ -53,30 +53,31 @@ to the bold number (will change depending on subject), in this case it is 28
 
 ### Prepare Stimulus Onset
 1. Download MatLab script file from step 2 called make_soa.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
-2. On the right hand side under scripts also download 'SOA_s026.mat' from FH Github and put into unpack folder for subject you are working on
-3. Double click on the 'make_soa.m' file in the fhlin_toolbox folder for it to open in MatLab
-4. If done successfully, you should have a file 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
+2. Also download 'SOA_s025.mat' from FH Github (or from server /space_lin2/fhlin/seeg/s025/fmri_analysis/SOA_s025.mat) and put into unpack folder for subject you are working on
+3. Change line 2 `file_soa='SOA_s026.mat';` to your subjects respective SOA file `file_soa='SOA_s025.mat';` and run. If done successfully, you should have files 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
 
 ### General Linear Modeling of the fMRI Time Series
-1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
-2. Under 'file_stc' make sure the only line there is the path to your s026_2_fsaverage_sfmcprstc file, `'../unpack/bold/032/s026_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present (Ex. `%    '../fmri_data/unpack/bold/030/s026_2_fsaverage_sfmcprstc';`) Note: Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
-3. Under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_032.mat';`
-4. In line 24 under 'erfmri_para' comment out `%    'fmri_soa_01.para';` since you are only analysing one run ('../unpack/bold/032/s026_2_fsaverage_sfmcprstc';) you only need one stimulus paramater file (if doing 2 then you would need both files)
-5. If done successfully, output should be "DONE!"
-6. Download MatLab script file from step 3 called fmri_vol_soa_glm.m (on FH GitHib page 11) and add file to fhlin_toolbox folder and double click on the file for it to open in MatLab
-7. Change ` '../fmri_data/unpack/bold/030/sfmcprstc.nii';` to ` '../unpack/bold/032/sfmcprstc.nii';` make sure the only line there is to the location of your sfmcprstc.nii file
-8. Make sure `'regressor_wm_ventrical_032.mat';` is the proper dicom number for the file you are working on (032 in this case) 
-9. Comment out `%    'fmri_soa_01.para';` under under 'erfmri_para' (line 24) and `%    'regressor_wm_ventrical_030.mat';` under file_ventrical_wm (line 31) so there is only one file called under erfmri_para and file_ventrical_wm
-10. If you get an error "Unrecognized function or variable 'load_untouch_nii'." try downloading the toolbox from https://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image and adding it to your fhlin_toolbox folder
-11. If done successfully, output should be "DONE!" and a window called "Figure 1: fmri_fig_overlay) should pop-up. The activation patterns may not make sense in this image but the next step is done to prepare the overlay volume and surfaces matched to the anatomical volume and surfaces
+1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
+2. Line 7 under 'file_stc' make sure the only line there is the path to your s025_2_fsaverage_sfmcprstc file, `'../unpack/bold/028/s025_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present. NOTE: Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
+3. Line 24 under 'erfmri_para' comment out `%    'fmri_soa_01.para';` since you are only analysing one run ('../unpack/bold/028/s025_2_fsaverage_sfmcprstc';) you only need one stimulus paramater file (if doing 2 then you would need both files)
+4. Line 30 under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_028.mat';`
+6. Make sure you are in the unpack directory and run. If done successfully, output should be "DONE!"
+7. Download MatLab script file from step 3 called fmri_vol_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
+8. Change line 9 ` '../fmri_data/unpack/bold/030/sfmcprstc.nii';` to ` '../unpack/bold/028/sfmcprstc.nii';` make sure the only line there is to the location of your sfmcprstc.nii file
+9. Comment out line 24 `%    'fmri_soa_01.para';` so there is only one file `'fmri_soa_02.para';`
+10. Change line 32 `'regressor_wm_ventrical_028.mat';` to the proper dicom number for the file you are working on (comment out or delete lines to other files)
+11. If you get an error "Unrecognized function or variable 'load_untouch_nii'." try downloading the toolbox from https://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image and adding it to your fhlin_toolbox folder
+12. If done successfully, output should be "DONE!" and a window called "Figure 1: fmri_fig_overlay) should pop-up. The activation patterns may not make sense in this image but the next step is done to prepare the overlay volume and surfaces matched to the anatomical volume and surfaces
+
+<img width="442" alt="Screen Shot 2024-03-12 at 12 40 02 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/35230d85-92f8-49b1-8ada-9cd8c7bd4501">
 
 ### Render Results Over the Brain 
 1. Download MatLab script file from step 4 called show_mri.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
-2. Change `subject='s031';` to `'subject='s026';`
-3. Change `file_overlay_register='../fmri_data/unpack/register.dat';` to `file_overlay_register='../unpack/register.dat';` (location of your register.dat file)
-4. Change `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to `file_overlay_vol='../unpack/bold/032/f.mgz';` (location of your f.mgz file). If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/Subjects/s026/mri/orig/unpack/bold/032` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
-5. Change `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to `setenv('SUBJECTS_DIR','/Users/jessica/Subjects/');` (location of your subjects folder)
-6. Change `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to `mri=MRIread(sprintf('/Users/jessica/Subjects/%s/mri/orig.mgz',subject));` (location of your orig.mgz file) and run
+2. Change line 3 `subject='s031';` to your subject number `'subject='s025';`
+3. Change line 8 `file_overlay_register='../fmri_data/unpack/register.dat';` to the location of your register.dat file `file_overlay_register='../unpack/register.dat';` NOTE: Error can occur when starting pathing with fmri_data
+4. Change line 9 `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to the location of your f.mgz file `file_overlay_vol='../unpack/bold/028/f.mgz';`, If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
+5. Change line 13 `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to the location of your subjects folder `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects/');` 
+6. Change line 16 `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to the location of your orig.mgz file `mri=MRIread(sprintf('/Users/jessica/data_analysis/seeg/subjects/%s/mri/orig.mgz',subject));` and run
 7. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder
 <img width="559" alt="Screen Shot 2024-02-21 at 3 18 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/81096134-6085-41f2-a3f5-94f2f4c75231">
 <img width="1104" alt="Screen Shot 2024-02-21 at 3 36 15 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/51737a08-0575-4c25-b03a-06f5c05b50a9">
