@@ -78,26 +78,26 @@ to the bold number (will change depending on subject), in this case it is 28
 4. Change line 9 `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to the location of your f.mgz file `file_overlay_vol='../unpack/bold/028/f.mgz';`, If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
 5. Change line 13 `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to the location of your subjects folder `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects/');` 
 6. Change line 16 `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to the location of your orig.mgz file `mri=MRIread(sprintf('/Users/jessica/data_analysis/seeg/subjects/%s/mri/orig.mgz',subject));` and run
-7. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder. The default is the right hemisphere, change line 4 to `lh` to see the left hemisphere
+7. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder. 
 
 <img width="712" alt="Screen Shot 2024-03-12 at 1 00 13 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/f584e49d-59df-4b22-814c-f3d651702531">
 
 <img width="817" alt="Screen Shot 2024-03-12 at 1 01 01 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/24bf917c-70eb-4f5d-86cc-124e218fd5a9">
 
-8. To visualize the results enter the code
+8. To visualize the results enter the code below in the MatLab command window (make sure to close previous figure windows before running code). You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Change line 4 in MatLab script and code below to 'rh' to see the right hemisphere. If you experience an error at this point or the image is not expected run `clear global etc_render_fsbrain` and try again
 
-`[stc,v]=inverse_read_stc('fmri_surf_soa_glm_h01_tstat-lh.stc');`
+```
+  [stc,v]=inverse_read_stc('fmri_surf_soa_glm_h01_tstat-lh.stc');
+  etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);
+```
 
-`etc_render_fsbrain('hemi','lh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);` 
+Use the 3-D rotation button on the figure to manipulate view of the image
 
-in the MatLab command window. You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Change lime 4 in MatLab code and code above to 'rh' to see right hemisphere . If you experience an error at this point or the image is not expected try `clear global etc_render_fsbrain` 
 
-<img width="538" alt="Screen Shot 2024-03-06 at 2 02 17 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/20745e96-4d0c-48e4-90ee-fbea01585429">
-<img width="794" alt="Screen Shot 2024-02-21 at 3 41 44 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/30a689f4-0d1d-4f55-922a-b9704e037604">
-<img width="696" alt="Screen Shot 2024-02-21 at 3 42 13 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/cc42a8e4-1e88-43c1-8e7d-183430bc8a7b">
 
-10. To view a heatmap of expected fMRI activity `imagesc(contrast)` where the X-axis is condition and Y-axis is time scale. Compare all the columns iteratively across all brain locations to see what columns match and get a map of how much the observed brain dynamics match the hypothesized model.
+
+9. To view a heatmap of expected fMRI activity run `imagesc(contrast)` where the X-axis is condition and Y-axis is time scale. Compare all the columns iteratively across all brain locations to see what columns match and get a map of how much the observed brain dynamics match the hypothesized model.
 
 <img width="546" alt="Screen Shot 2024-02-27 at 11 38 00 AM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/eb2d8f96-fdaf-4561-bca8-b0bb356e9f69">
 
-11. Repeat for other subjects for group-level analysis, and this is the end of event-realted analysis
+10. Repeat for other subjects for group-level analysis, and this is the end of event-related analysis
