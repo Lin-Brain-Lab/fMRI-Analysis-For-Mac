@@ -93,7 +93,7 @@ NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer
 
 <img width="727" alt="Screen Shot 2024-03-12 at 11 10 33 AM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/063ab6f9-09fe-4fb5-bb08-535215bdb21d">
 
-6. If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
+If there is a error at this step try `ls /Applications/freesurfer/7.4.1/matlab/fr*.m` should show files required (can add these to path). Or click 'browse for folder' in top left and click file path for freesurfer -> matlab
 
 <img width="385" alt="Screen Shot 2024-01-29 at 4 36 06 PM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/9de35622-ae4e-4110-a6cf-5a739c1bf812">
 
