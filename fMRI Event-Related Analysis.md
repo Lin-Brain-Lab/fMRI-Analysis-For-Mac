@@ -13,7 +13,7 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 7. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder (can also change file name from s026 to respective subject number)
 8. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
 9. Run your startup.m (contents of which are in the setting up environment page)
-10. `setenv ('SUBJECTS_DIR','/Users/jessica/Subjects');`
+10. `setenv ('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects');`
 11. `pathtool` add fhlin_toolbox and all subfolders to path
 12. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to you fhlin_toolbox/seeg_s025 folder
 13. Double-click to open the file in MatLab and change lines 14, 18 to your corresponding subject and bold number. Make sure you are in your subjects unpack folder directory in MatLab then run s025_vol2surf.m 
@@ -27,8 +27,8 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 ### Get Confound Information
 #### Get confound information from motion correction
 1. Download MatLab script file from step 1.1 called get_mc_regressor.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
-2. Change line `bold_dir='/space_lin2/fhlin/7t_music_skku/LAM_AUD_BHC_simple/unpack';` to the location of your subjects unpack folder `bold_dir='/Users/jessica/data_analysis/seeg/s025/fmri_data/unpack';`
-3. Change line `dirs={
+2. Change line 5 `bold_dir='/space_lin2/fhlin/7t_music_skku/LAM_AUD_BHC_simple/unpack';` to the location of your subjects unpack folder `bold_dir='/Users/jessica/data_analysis/seeg/s025/fmri_data/unpack';`
+3. Change line 8 `dirs={
 'bold/007';
 'bold/008';
 'bold/009';
@@ -38,20 +38,18 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 'bold/021';
 };
 `
-to the bold number will change depending on subject, in this case it is 32
+to the bold number (will change depending on subject), in this case it is 28
 `dirs={
-'bold/032'
+'bold/028'
 };` 
-5. Should say "get_mc_regressor done" when complete
+5. Make sure you are in the unpack directory and run. If done succesfully, the output should be "get_mc_regressor done" 
 
 #### Get confound information from non-gray matter time series
 1. Download MatLab script file from step 1.2 get_ventricle_wm_regressor.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
-2. Change `target_subject='s006';` to `target_subject='s026';` (the subject ID you are working on)
-3. Change `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to `'./bold/032/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file) for file_register_source and file_regression_source (lines 5 & 9)
-4. Change `'aparc+aseg_fmcprstc_005.nii'` to `'aparc+aseg_fmcprstc_032.nii'` (dicom scan number, which is shown in bold folder)
-5. Change `'regressor_wm_ventrical_005.mat';` to `'regressor_wm_ventrical_032.mat';`
-6. Make sure your directory in matlab is in your subjects unpack folder & run
-7. If done successfully, output should be "DONE!" and you should have a aparc+aseg_fmcprstc_026.nii and regressor_wm_ventrical_026.mat in your unpack folder
+2. Change line 3 `target_subject='s006';` to `target_subject='s025';` (the subject ID you are working on)
+3. Change lines 5 & 9 `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to `'./bold/028/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file) 
+4. Change lines 17 and 21 `'aparc+aseg_fmcprstc_005.nii'` to `'aparc+aseg_fmcprstc_028.nii'` your respective dicom scan number 
+6. Make sure you are in the unpack directory and run. If done successfully, output should be "DONE!" and you should have a aparc+aseg_fmcprstc_028.nii and regressor_wm_ventrical_028.mat file in your unpack folder
 
 ### Prepare Stimulus Onset
 1. Download MatLab script file from step 2 called make_soa.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
