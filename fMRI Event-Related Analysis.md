@@ -53,7 +53,7 @@ to the bold number (will change depending on subject), in this case it is 28
 ### Prepare Stimulus Onset
 1. Download MatLab script file from step 2 called make_soa.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
 2. Also download 'SOA_s025.mat' from FH Github (or from server /space_lin2/fhlin/seeg/s025/fmri_analysis/SOA_s025.mat) and put into unpack folder for subject you are working on
-3. Change line 2 `file_soa='SOA_s026.mat';` to your subjects respective SOA file `file_soa='SOA_s025.mat';` and run. If done successfully, you should have files 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
+3. Change line 3 `file_soa='SOA_s026.mat';` to your subjects respective SOA file `file_soa='SOA_s025.mat';` and run. If done successfully, you should have files 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
 
 ### General Linear Modeling of the fMRI Time Series
 1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
