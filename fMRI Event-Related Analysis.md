@@ -81,7 +81,7 @@ to the bold number (will change depending on subject), in this case it is 28
 
 <img width="712" alt="Screen Shot 2024-03-12 at 1 00 13 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/f584e49d-59df-4b22-814c-f3d651702531">
 
-<img width="817" alt="Screen Shot 2024-03-12 at 1 01 01 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/24bf917c-70eb-4f5d-86cc-124e218fd5a9">
+<img width="763" alt="Screen Shot 2024-03-12 at 3 25 01 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/14b3c616-a7bc-4e3a-8c2b-1fdc797baa51">
 
 8. To visualize the results enter the code below in the MatLab command window (make sure to close previous figure windows before running code). You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Default is the left hemisphere, change line 4 in MatLab script and code below to 'rh' to see the right hemisphere. If you experience an error at this point or the image is not expected run `clear global etc_render_fsbrain` and try again
 
