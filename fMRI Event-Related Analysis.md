@@ -84,14 +84,14 @@ to the bold number (will change depending on subject), in this case it is 28
 
 <img width="817" alt="Screen Shot 2024-03-12 at 1 01 01 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/24bf917c-70eb-4f5d-86cc-124e218fd5a9">
 
-8. To visualize the results enter the code below in the MatLab command window (make sure to close previous figure windows before running code). You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Default is the left hemisphere, change line 4 in MatLab script and code below to 'lh' to see the left hemisphere. If you experience an error at this point or the image is not expected run `clear global etc_render_fsbrain` and try again
+8. To visualize the results enter the code below in the MatLab command window (make sure to close previous figure windows before running code). You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Default is the left hemisphere, change line 4 in MatLab script and code below to 'rh' to see the right hemisphere. If you experience an error at this point or the image is not expected run `clear global etc_render_fsbrain` and try again
 
 ```
   [stc,v]=inverse_read_stc('fmri_surf_soa_glm_h01_tstat-rh.stc');
   etc_render_fsbrain('hemi','rh','overlay_stc',stc,'overlay_vertex',v,'overlay_threshold',[2 3]);
 ```
 
-Use the 3-D rotation button on the figure to manipulate view of the image
+Use the 3-D rotation button on the figure to manipulate view of the image. Change h01/h02/h03 in code above to see activation pattern with different hypotheses (in this case, h01 only visual stimuli, h02 only audio stimuli, and h03 both audio and visual stimuli)
 
 <img width="529" alt="Screen Shot 2024-03-12 at 1 18 44 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/3602a1b7-0836-469e-9517-5845becdf5d3">
 <img width="722" alt="Screen Shot 2024-03-12 at 1 19 04 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/45687381-8227-4160-84a5-582ddc82cba5">
