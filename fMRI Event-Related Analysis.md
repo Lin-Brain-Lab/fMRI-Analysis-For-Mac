@@ -15,10 +15,9 @@ NOTE: You should begin this analysis with steps from the 'fMRI Pre-Processing' p
 9. Run your startup.m (contents of which are in the setting up environment page)
 10. `setenv ('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects');`
 11. `pathtool` add fhlin_toolbox and all subfolders to path
-12. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to you fhlin_toolbox/seeg_s025 folder
-13. Double-click to open the file in MatLab and change lines 14, 18 to your corresponding subject and bold number. Make sure you are in your subjects unpack folder directory in MatLab then run s025_vol2surf.m 
-14. If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
-15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
+12. Double-click to open the file in MatLab and change lines 14, 18 to your corresponding subject and bold number. Make sure you are in your subjects unpack folder directory in MatLab then run s025_vol2surf.m 
+13. If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
+14. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
 
 ### Transform fMRI time series from individual's native space to MNI305 template
 1. Download MatLab script file from step 0.2 called s026_vol2vol.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder
