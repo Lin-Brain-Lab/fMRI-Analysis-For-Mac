@@ -7,18 +7,17 @@
 3. `source .cshrc`
 4. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects`
 5. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack` to get to unpack folder of subject
-6. `cat register.dat` to see contents of register.dat file, should look like image below
-
-<img width="416" alt="Screen Shot 2024-03-12 at 12 07 11 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/3ca48404-0143-49cd-83e0-9b3e1516c77b">
-
-7. Download MatLab script file from step 0.1 called s026_vol2surf.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder NOTE: add respective subject number to file name to avoid downstream pathing errors
-8. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab (in terminal so that MatLab knows FreeSurfer environment) 
-9. Run your startup.m (contents of which are in the setting up environment page)
+6. `cat register.dat` to see contents of register.dat file
+7. Download MatLab script [s026_vol2surf.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/s026_vol2surf.m) and add the file to your fhlin_toolbox/seeg_s025 folder NOTE: add respective subject number to file name to avoid downstream pathing errors
+8. `/Applications/MATLAB_R2023b.app/bin/matlab &` open Matlab in terminal so that MatLab knows FreeSurfer environment
+9. Run startup.m 
 10. `setenv ('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects');`
-11. `pathtool` add fhlin_toolbox and all subfolders to path
-12. Double-click to open the file in MatLab and change lines 14, 18 to your corresponding subject and bold number. Make sure you are in your subjects unpack folder directory in MatLab then run s025_vol2surf.m 
-13. If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
-14. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
+12. Double-click to open the file in MatLab and change lines 14, 18 to your corresponding subject and bold number. Make sure you are in your subjects unpack folder directory in MatLab then run s025_vol2surf.m
+  <details>
+    <summary>Possible Errors</summary>
+If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
+  </details>
+15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
 
 ### Transform fMRI time series from individual's native space to MNI305 template
 1. Download MatLab script file from step 0.2 called s026_vol2vol.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder
