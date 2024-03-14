@@ -20,7 +20,7 @@ If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/l
 15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
 
 ### Transform fMRI time series from individual's native space to MNI305 template
-1. Download MatLab script file from step 0.2 called s026_vol2vol.m (on FH GitHib page 11) and add the file to your fhlin_toolbox/seeg_s025 folder
+1. Download [s026_vol2vol.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/s026_vol2vol.m) and add the file to your fhlin_toolbox/seeg_s025 folder
 2. Change line 12 (to the location of your subject folder, /Users/jessica/data_analysis/seeg/s025), 14, and 18. Make sure you are in the unpack directory and run. If done succesfully, the output should be "mri_vol2vol done" 
 
 ### Get Confound Information
