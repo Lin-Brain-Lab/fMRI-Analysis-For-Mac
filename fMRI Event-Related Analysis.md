@@ -25,7 +25,7 @@ If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/l
 
 ### Get Confound Information
 #### Get confound information from motion correction
-1. Download MatLab script file from step 1.1 called get_mc_regressor.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
+1. Download [get_mc_regressor.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/get_mc_regressor.m) and add file to your fhlin_toolbox/seeg_s025 folder 
 2. Change line 5 `bold_dir='/space_lin2/fhlin/7t_music_skku/LAM_AUD_BHC_simple/unpack';` to the location of your subjects unpack folder `bold_dir='/Users/jessica/data_analysis/seeg/s025/fmri_data/unpack';`
 3. Change line 8 `dirs={
 'bold/007';
@@ -44,22 +44,24 @@ to the bold number (will change depending on subject), in this case it is 28
 5. Make sure you are in the unpack directory and run. If done succesfully, the output should be "get_mc_regressor done" 
 
 #### Get confound information from non-gray matter time series
-1. Download MatLab script file from step 1.2 get_ventricle_wm_regressor.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
-2. Change line 3 `target_subject='s006';` to `target_subject='s025';` (the subject ID you are working on)
-3. Change lines 5 & 9 `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to `'./bold/028/fmcprstc.nii.gz';` (location of your fmcprstc.nii.gz file) 
-4. Change lines 17 and 21 `'aparc+aseg_fmcprstc_005.nii'` to `'aparc+aseg_fmcprstc_028.nii'` your respective dicom scan number 
+1. Download [get_ventricle_wm_regressor.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/get_ventricle_wm_regressor.m) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
+2. Change line 3 `target_subject='s006';` to the subject ID you are working on `target_subject='s025';` 
+3. Change lines 5 & 9 `'../resting_data/unpack/bold/005/fmcprstc.nii.gz';` to the location of your fmcprstc.nii.gz file`'./bold/028/fmcprstc.nii.gz';` 
+4. Change lines 17 and 21 `'aparc+aseg_fmcprstc_005.nii'` to your respective dicom scan number `'aparc+aseg_fmcprstc_028.nii'`  
 6. Make sure you are in the unpack directory and run. If done successfully, output should be "DONE!" and you should have a aparc+aseg_fmcprstc_028.nii and regressor_wm_ventrical_028.mat file in your unpack folder
 
 ### Prepare Stimulus Onset
-1. Download MatLab script file from step 2 called make_soa.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
-2. Also download 'SOA_s025.mat' from FH Github (or from server /space_lin2/fhlin/seeg/s025/fmri_analysis/SOA_s025.mat) and put into unpack folder for subject you are working on
+1. Download [make_soa.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/make_soa.m) and add file to your fhlin_toolbox/seeg_s025 folder 
+2. Also download [SOA_s025.mat](https://github.com/fahsuanlin/labmanual/blob/master/scripts/SOA_s026.mat) (also found at server /space_lin2/fhlin/seeg/s025/fmri_analysis/SOA_s025.mat) and put into unpack folder for subject you are working on
 3. Change line 3 `file_soa='SOA_s026.mat';` to your subjects respective SOA file `file_soa='SOA_s025.mat';` and run. If done successfully, you should have files 'fmri_soa_01.para' and 'fmri_soa_02.para' in your subjects unpack folder
 
 ### General Linear Modeling of the fMRI Time Series
-1. Download MatLab script file from step 3 called fmri_surf_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder 
-2. Line 7 under 'file_stc' make sure the only line there is the path to your s025_2_fsaverage_sfmcprstc file, `'../unpack/bold/028/s025_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present. NOTE: Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
-3. Line 24 under 'erfmri_para' comment out `%    'fmri_soa_01.para';` since you are only analysing one run ('../unpack/bold/028/s025_2_fsaverage_sfmcprstc';) you only need one stimulus paramater file (if doing 2 then you would need both files)
-4. Line 30 under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_028.mat';`
+1. Download [fmri_surf_soa_glm.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/fmri_surf_soa_glm.m) and add file to your fhlin_toolbox/seeg_s025 folder 
+2. Line 7 under 'file_stc' make sure the only line there is the path to your s025_2_fsaverage_sfmcprstc file, `'../unpack/bold/028/s025_2_fsaverage_sfmcprstc';` you can comment out or delete other paths there if present.
+>[!NOTE]
+>Pathing error occurs when doing absolute path (Ex. `/Users/jessica/Subjects/s026/mri/orig/unpack/bold/032/s026_2_fsaverage_sfmcprstc`), try to avoid doing so
+4. Line 24 under 'erfmri_para' comment out `%    'fmri_soa_01.para';` since you are only analysing one run ('../unpack/bold/028/s025_2_fsaverage_sfmcprstc';) you only need one stimulus paramater file (if doing 2 then you would need both files)
+5. Line 30 under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_028.mat';`
 6. Make sure you are in the unpack directory and run. If done successfully, output should be "DONE!"
 7. Download MatLab script file from step 3 called fmri_vol_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
 8. Change line 9 ` '../fmri_data/unpack/bold/030/sfmcprstc.nii';` to ` '../unpack/bold/028/sfmcprstc.nii';` make sure the only line there is to the location of your sfmcprstc.nii file
