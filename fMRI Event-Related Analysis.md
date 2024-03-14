@@ -17,7 +17,7 @@
     <summary>Possible Errors</summary>
 If you get an error `/Users/jessica/data_analysis/seeg/subjects/fsaverage/surf/lh.inflated : No such file or directory` try duplicating and putting the fsaverage folder from the FreeSurfer application into your Subjects folder
   </details>
-15. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
+12. If done succesfully, you should recieve a message "I think I responded favorably to all your requests. Good bye." and there should be a "sfmcprstc-rh.stc" and "sfmcprstc-lh.stc" file in /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028
 
 ### Transform fMRI time series from individual's native space to MNI305 template
 1. Download [s026_vol2vol.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/s026_vol2vol.m) and add the file to your fhlin_toolbox/seeg_s025 folder
