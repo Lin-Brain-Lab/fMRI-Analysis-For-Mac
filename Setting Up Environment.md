@@ -6,7 +6,7 @@ FreeSurfer recontruction locally for mac starts from the beginning of setting up
 2. FreeSurfer https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
 3. FSL https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation
 4. MNE https://mne.tools/stable/install/mne_c.html
-5. fhlin_toolbox https://github.com/fahsuanlin/fhlin_toolbox
+5. fhlin_toolbox https://github.com/fahsuanlin/fhlin_toolbox additionally reccomended to copy 'matlab' folder from freesurfer folder into fhlin_toolbox folder
 6. Mango: https://mangoviewer.com
 7. XQuartz: https://www.xquartz.org
 
