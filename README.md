@@ -1,1 +1,1 @@
-This page details steps on how to analyse and process fMRI data including T1 reconstruction, fMRI pre-processing, and fMRI event-related analysis.
+This page details steps on how to analyse and process fMRI data including T1 reconstruction, fMRI pre-processing, and fMRI event-related analysis. Begin analysis with the setting up environment page.
