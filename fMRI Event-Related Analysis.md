@@ -82,7 +82,8 @@ If you get an error "Unrecognized function or variable 'load_untouch_nii'." try 
 2. Change line 3 `subject='s031';` to your subject number `'subject='s025';`
 3. Change line 8 `file_overlay_register='../fmri_data/unpack/register.dat';` to the location of your register.dat file `file_overlay_register='../unpack/register.dat';` NOTE: Error can occur when starting pathing with fmri_data
 4. Change line 9 `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to the location of your f.mgz file `file_overlay_vol='../unpack/bold/028/f.mgz';`,
->[!IMPORTANT] If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
+>[!IMPORTANT]
+>If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
 6. Change line 13 `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to the location of your subjects folder `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects/');` 
 7. Change line 16 `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to the location of your orig.mgz file `mri=MRIread(sprintf('/Users/jessica/data_analysis/seeg/subjects/%s/mri/orig.mgz',subject));` and run
 8. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder. 
