@@ -1,4 +1,4 @@
-# Useful commands and help with common errors 
+# Useful commands and common errors 
 
 ## Making screens 
 Some commands are important for making screens to process data remotely as it often takes hours for a reconstruction to complete.
