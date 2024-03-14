@@ -20,12 +20,14 @@
 10. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` get into right directory 
 11. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
 12. `cd unpack/`
-13. `vi unpack.rule` write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028) NOTE: 
-14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time as unpacksdcmdir converts individual slices of dicom file into volume to one file). If done successfully, the output should be "unpacksdcmdir Done"
+13. `vi unpack.rule` write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028)
+>[!NOTE]
+>There are typically 2 scans for each subject, keep note which scan number you are processing 
+15. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time as unpacksdcmdir converts individual slices of dicom file into volume to one file). If done successfully, the output should be "unpacksdcmdir Done"
     
 ## Pre-processing fMRI Data 
 ### Setting up Folders & Environment 
-1. `vi sessid` folder name, type "unpack" into editor (press A key to edit, then ESC + :wq to save), make sure your current directory is in the unpack folder
+1. `vi sessid` type "unpack" into editor (press A key to edit, then ESC + :wq to save), make sure your current directory is in the unpack folder
 2. `vi sessdir` give path to unpack folder "/Users/jessica/data_analysis/seeg/s025/fmri_data"
 3. `ls bold/028` double checks if all three files (f.nii, f.nii-infodump.dat, flf) are in the bold folder
 4. `mktemplate-sess -sf sessid -df sessdir` output should be "mktemplate-sess completed"
