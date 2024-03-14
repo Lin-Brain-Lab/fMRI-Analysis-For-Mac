@@ -1,4 +1,6 @@
-https://github.com/fahsuanlin/labmanual/wiki/48.-Group%E2%80%90level-fMRI-analysis
+#fMRI Group-Level Analysis
+>[!NOTE]
+> Begin analysis by starting with steps from the [Event-Related fMRI Analysis page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/fMRI%20Event-Related%20Analysis.md)
 
 1. Download [show_individual_surf](https://github.com/fahsuanlin/labmanual/blob/master/scripts/show_individual_surf_031324.m)
 2. List starting from line 4 the subjects you want to include
