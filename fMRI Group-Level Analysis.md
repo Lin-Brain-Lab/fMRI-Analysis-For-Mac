@@ -2,7 +2,7 @@
 >[!NOTE]
 > Begin analysis by starting with steps from the [Event-Related fMRI Analysis page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/fMRI%20Event-Related%20Analysis.md)
 
-1. Download [show_individual_surf](https://github.com/fahsuanlin/labmanual/blob/master/scripts/show_individual_surf_031324.m)
+1. Download [show_individual_surf](https://github.com/fahsuanlin/labmanual/blob/master/scripts/show_individual_surf_031324.m) and add to your fhlin_toolbox folder and open in MatLab
 2. List starting from line 4 the subjects you want to include
 3. Change line 35 to your root directory
 4. Change line 49 to the location of the stc files for your subjects `'%s/%s/fmri_data/unpack/ %s-%s.stc'`
