@@ -4,11 +4,39 @@
 > Begin analysis by starting with steps from the [Event-Related fMRI Analysis page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/fMRI%20Event-Related%20Analysis.md)
 
 1. Download [show_individual_surf](https://github.com/fahsuanlin/labmanual/blob/master/scripts/show_individual_surf_031324.m) and add to your fhlin_toolbox folder and open in MatLab
-2. List starting from line 4 the subjects you want to include
-3. Change line 35 to your root directory
-4. Change line 49 to the location of the stc files for your subjects `'%s/%s/fmri_data/unpack/ %s-%s.stc'`
-5. If done successfully, you should have 3 images for each subject ("A" for audio, "V" for visual, and "AV" for audio-visual) in the folder directory you choose (line , in this case fhlin toolbox)
+2. Make a folder /Users/jessica/data_analysis/seeg/group_level_analysis_s025_s031_s032_z034/Individual and go to this directory in MatLab
+3. List starting from line 4 the subjects you want to include
+4. Change line 35 to your root directory `root_dir='/Users/jessica/data_analysis/seeg';`
+5. Change line 49 to the location of the stc files for your subjects `'%s/%s/fmri_data/unpack/ %s-%s.stc'`
+6. If done successfully, you should have 3 images for each subject ("A" for audio, "V" for visual, and "AV" for audio-visual) in the folder directory you choose
+<details>
+  <summary>Example of S025 V, AV, and A image</summary>
+S025 V
+  
+![fmri_surf_031324_s025_V](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/a4aa6c21-9a3f-41a5-883f-68c6ff3b365d)
+
+s025 AV
+![fmri_surf_031324_s025_AV](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/08dac687-254f-4757-9890-59854232ffe9)
+
+s025 A
+![fmri_surf_031324_s025_A](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/dae71213-30b3-4e70-a5ab-a26e106a6112)
+</details>
 
 ## Calculate Group-Level Activation
 1. Download [average_surf change lines](https://github.com/fahsuanlin/labmanual/blob/master/scripts/average_surf_031324.m) and add to your fhlin_toolbox folder and open in MatLab
-2. 
+2. Make a folder /Users/jessica/data_analysis/seeg/group_level_analysis_s025_s031_s032_z034/Average and go to this directory in MatLab
+3. List starting from line 4 the subjects you want to include
+4. Change line 35 to your root directory `root_dir='/Users/jessica/data_analysis/seeg';`
+5. Change line 49 to the location of the stc files for your subjects `'%s/%s/fmri_data/unpack/%s-%s.stc'`
+6. Change line 61 to the location you want the images `'%s/group_level_analysis_s025_s031_s032_z034/Average/fmri_surf_%s_average.png'`
+7. If done successfully, you should have 3 images (average of "A", "V", and "AV") in the average folder
+<details>
+  <summary>Example of Average V, AV, and A for s025, s031, s032, and s034</summary>
+  
+V Average
+![fmri_surf_V_average](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/c7c6cd4f-85c2-4141-a5f5-556b14f65c90)
+AV Average
+![fmri_surf_AV_average](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/9066c288-04bc-4c76-96b5-a82532878a6e)
+A Average
+![fmri_surf_A_average](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/a41f5965-a482-4709-b26a-050141b3e8ad)
+</details>
