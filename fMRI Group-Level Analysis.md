@@ -1,4 +1,4 @@
-#fMRI Group-Level Analysis
+# fMRI Group-Level Analysis
 >[!NOTE]
 > Begin analysis by starting with steps from the [Event-Related fMRI Analysis page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/fMRI%20Event-Related%20Analysis.md)
 
