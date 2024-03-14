@@ -63,27 +63,38 @@ to the bold number (will change depending on subject), in this case it is 28
 4. Line 24 under 'erfmri_para' comment out `%    'fmri_soa_01.para';` since you are only analysing one run ('../unpack/bold/028/s025_2_fsaverage_sfmcprstc';) you only need one stimulus paramater file (if doing 2 then you would need both files)
 5. Line 30 under 'file_ventrical_wm' make sure only the file you created in the previous step is there, `'regressor_wm_ventrical_028.mat';`
 6. Make sure you are in the unpack directory and run. If done successfully, output should be "DONE!"
-7. Download MatLab script file from step 3 called fmri_vol_soa_glm.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
+7. Download [fmri_vol_soa_glm.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/fmri_vol_soa_glm.m) and add file to your fhlin_toolbox/seeg_s025 folder 
 8. Change line 9 ` '../fmri_data/unpack/bold/030/sfmcprstc.nii';` to ` '../unpack/bold/028/sfmcprstc.nii';` make sure the only line there is to the location of your sfmcprstc.nii file
 9. Comment out line 24 `%    'fmri_soa_01.para';` so there is only one file `'fmri_soa_02.para';`
 10. Change line 32 `'regressor_wm_ventrical_028.mat';` to the proper dicom number for the file you are working on (comment out or delete lines to other files)
-11. If you get an error "Unrecognized function or variable 'load_untouch_nii'." try downloading the toolbox from https://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image and adding it to your fhlin_toolbox folder
-12. If done successfully, output should be "DONE!" and a window called "Figure 1: fmri_fig_overlay) should pop-up. The activation patterns may not make sense in this image but the next step is done to prepare the overlay volume and surfaces matched to the anatomical volume and surfaces
-
+<details> 
+  <summary>Possible Errors</summary>
+If you get an error "Unrecognized function or variable 'load_untouch_nii'." try downloading the toolbox from https://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image and adding it to your fhlin_toolbox folder
+</details>
+12. If done successfully, output should be "DONE!" and a window called Figure 1: fmri_fig_overlay should pop-up. The activation patterns may not make sense in this image but the next step is done to prepare the overlay volume and surfaces matched to the anatomical volume and surfaces
+<details>
+  <summary>Figure 1: fmri_fig_overlay)</summary>
 <img width="442" alt="Screen Shot 2024-03-12 at 12 40 02 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/35230d85-92f8-49b1-8ada-9cd8c7bd4501">
+</details>
 
 ### Render Results Over the Brain 
-1. Download MatLab script file from step 4 called show_mri.m (on FH GitHib page 11) and add file to your fhlin_toolbox/seeg_s025 folder and double click on the file for it to open in MatLab
+1. Download [show_mri.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/show_mri.m) and add file to your fhlin_toolbox/seeg_s025 folder 
 2. Change line 3 `subject='s031';` to your subject number `'subject='s025';`
 3. Change line 8 `file_overlay_register='../fmri_data/unpack/register.dat';` to the location of your register.dat file `file_overlay_register='../unpack/register.dat';` NOTE: Error can occur when starting pathing with fmri_data
-4. Change line 9 `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to the location of your f.mgz file `file_overlay_vol='../unpack/bold/028/f.mgz';`, If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
-5. Change line 13 `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to the location of your subjects folder `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects/');` 
-6. Change line 16 `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to the location of your orig.mgz file `mri=MRIread(sprintf('/Users/jessica/data_analysis/seeg/subjects/%s/mri/orig.mgz',subject));` and run
-7. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder. 
-
+4. Change line 9 `file_overlay_vol='../fmri_data/unpack/bold/006/f.mgz';` to the location of your f.mgz file `file_overlay_vol='../unpack/bold/028/f.mgz';`,
+>[!IMPORTANT] If you only have a f.nii file, exit MatLab (or in terminal CTRL Z then `bg` to put matlab in background) then `cd /Users/jessica/data_analysis/seeg/s025/fmri_data/unpack/bold/028` then `mri_convert f.nii f.mgz` to convert the f.nii file to f.mgz
+6. Change line 13 `setenv('SUBJECTS_DIR','/Users/fhlin/workspace/seeg/subjects/');` to the location of your subjects folder `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects/');` 
+7. Change line 16 `mri=MRIread(sprintf('/Users/fhlin/workspace/seeg/subjects/%s/mri/orig.mgz',subject));` to the location of your orig.mgz file `mri=MRIread(sprintf('/Users/jessica/data_analysis/seeg/subjects/%s/mri/orig.mgz',subject));` and run
+8. If done successfully, you should have a output of a pop-up titled "Figure 1," if you click on the image you should get another pop-up of "Figure 2". You should also have files STC files 'fmri_surf_soa_glm_h0?_beta-?h.stc' and 'fmri_surf_soa_glm_h0?_tstat-?h.stc' in your unpack folder. 
+<details>
+  <summary>Figure 1</summary>
 <img width="712" alt="Screen Shot 2024-03-12 at 1 00 13 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/f584e49d-59df-4b22-814c-f3d651702531">
+</details>
 
+<details>
+   <summary>Figure 2</summary>
 <img width="763" alt="Screen Shot 2024-03-12 at 3 25 01 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/14b3c616-a7bc-4e3a-8c2b-1fdc797baa51">
+</details>
 
 8. To visualize the results enter the code below in the MatLab command window (make sure to close previous figure windows before running code). You should get a pop-up "Figure 2," and if you click on the image you should get another pop-up "Figure 3" and "Figure 4". Default is the left hemisphere, change line 4 in MatLab script and code below to 'rh' to see the right hemisphere. If you experience an error at this point or the image is not expected run `clear global etc_render_fsbrain` and try again
 
@@ -93,13 +104,26 @@ to the bold number (will change depending on subject), in this case it is 28
 ```
 
 Use the 3-D rotation button on the figure to manipulate view of the image. Change h01/h02/h03 in code above to see activation pattern with different hypotheses (in this case, h01 only visual stimuli, h02 only audio stimuli, and h03 both audio and visual stimuli)
-
+<details>
+   <summary>Figure 1</summary>
 <img width="529" alt="Screen Shot 2024-03-12 at 1 18 44 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/3602a1b7-0836-469e-9517-5845becdf5d3">
+</details>
+
+  <details>
+   <summary>Figure 2</summary>
 <img width="722" alt="Screen Shot 2024-03-12 at 1 19 04 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/45687381-8227-4160-84a5-582ddc82cba5">
+</details>
+
+  <details>
+   <summary>Figure 3</summary>
 <img width="508" alt="Screen Shot 2024-03-12 at 1 19 18 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/57f12017-7d6a-4e35-bf14-ed3df5207e4f">
+</details>
 
 9. To view a heatmap of expected fMRI activity run `imagesc(contrast)` where the X-axis is condition and Y-axis is time scale. Compare all the columns iteratively across all brain locations to see what columns match and get a map of how much the observed brain dynamics match the hypothesized model.
 
+  <details>
+   <summary>Heatmap</summary>
 <img width="546" alt="Screen Shot 2024-02-27 at 11 38 00 AM" src="https://github.com/Lin-Brain-Lab/FreeSurfer-Reconstruction-For-Mac/assets/157174338/eb2d8f96-fdaf-4561-bca8-b0bb356e9f69">
+</details>
 
 10. Repeat for other subjects for group-level analysis, and this is the end of event-related analysis
