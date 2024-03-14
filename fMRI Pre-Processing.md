@@ -12,14 +12,15 @@
 
 3. `tcsh`
 4. `source .cshrc`
-5. `mri_info` checks if all freesurfer items are there
-6. `setenv SUBJECTS_DIR $PWD`
-7. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects` sets your subject directory
-8. `echo $SUBJECTS_DIR` checks what path your subject directory is in
-9. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` get into right directory 
-10. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
-11. `cd unpack/`
-12. `vi unpack.rule` write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028) NOTE: 
+5. `vi .cshrc` make sure you have the correct environment set up (seen in the [setting up environment page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/Setting%20Up%20Environment.md))
+6. `mri_info` checks if all freesurfer items are there
+7. `setenv SUBJECTS_DIR $PWD`
+8. `setenv SUBJECTS_DIR /Users/jessica/data_analysis/seeg/subjects` sets your subject directory
+9. `echo $SUBJECTS_DIR` checks what path your subject directory is in
+10. `cd /Users/jessica/data_analysis/seeg/s025/fmri_data` get into right directory 
+11. `mkdir unpack` creates empty folder called unpack (in fmri_data folder)
+12. `cd unpack/`
+13. `vi unpack.rule` write “28 bold nii f.nii” where number changes based on run and is given based on the dicom scan number which can be found in the file path /Users/jessica/data_analysis/seeg/s025/fmri_data/dicom/180723_TZENG.MR.NISSEN_FMRI.0028.0001.2018.07.23.17.58.46.593750.849028.IMA, here is it 28 (from FMRI.0028) NOTE: 
 14. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time as unpacksdcmdir converts individual slices of dicom file into volume to one file). If done successfully, the output should be "unpacksdcmdir Done"
     
 ## Pre-processing fMRI Data 
@@ -53,40 +54,10 @@
 
 ## Map fMRI Time Series Onto Indiviudal Cortical Surfaces (Convert Native to Template Space)
 1. If you have not already, [download MNE-C](https://mne.tools/stable/install/mne_c.html)
-2. `tcsh`
-3. `vi .cshrc` make sure you have the correct environment set up that looks like this:
-
-NOTE: Change lines 1, 4, 14, 15 to your respective MatLab version and FreeSurfer and subject folder location (also seen in setting up environment page):
-
-    setenv FREESURFER_HOME /Applications/freesurfer/7.4.1
-    source $FREESURFER_HOME/SetUpFreeSurfer.csh
-    source $FREESURFER_HOME/FreeSurferEnv.csh
-
-    setenv MATLAB_ROOT /Applications/MATLAB_R2023b.app
-    setenv MNE_ROOT /Applications/MNE-2.7.4-3378-MacOSX-x86_64
-    source $MNE_ROOT/bin/mne_setup
-    
-    setenv DYLD_LIBRARY_PATH /Applications/MNE-2.7.4-3378-MacOSX-x86_64/lib:/opt/X11/lib/flat_namespace
-    #setenv DYLD_LIBRARY_PATH /usr/local/lib/libquicktime.dylib
-
-    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/bin )
-    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/lib )
-    set path = ( $path /Users/fhlin/toolbox/OpenMEEG-2.4.1-MacOSX/include )
-    set path = ( $path /Applications/MRIcron.app/Contents/Resources )
-
-    alias MATLAB /Applications/MATLAB_R2023b.app/bin/matlab
-    setenv SUBJECTS_DIR /Users/jessica/Subjects
-
-    alias robin ssh 142.76.1.189 -l fhlin
-    alias robinsri ssh 172.20.151.238 -l fhlin
-
-
-4. `source .cshrc`
-5. `mne_make_movie` output should be mne_make_movie options
-7. If you have an error at this point, try updating your [fhlin_toolbox](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/README.md) 
+2. `mne_make_movie` output should be mne_make_movie options. If you have an error at this point, try updating your [fhlin_toolbox](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/README.md) 
 ### Render Brain In MatLab
 1. `/Applications/MATLAB_R2023b.app/bin/matlab &` open MatLab in terminal
-2. Run startup.m script (contents of which are in the [setting up environment page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/Setting%20Up%20Environment.md)
+2. Run startup.m script (seen in the [setting up environment page](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/Setting%20Up%20Environment.md)
 4. `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/seeg/subjects')`
 5. `etc_render_fsbrain('subject','s025')` If done successfully, a 'Figure 1' tab should come up with a brain slice. If you click on a point in Figure 1, a 'Figure 2' window should come up. Press 'p' key to have a subject, volume, and, surface window to have different views. Press 'w' for coordinates.
 <details>
