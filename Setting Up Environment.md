@@ -92,4 +92,3 @@ In the matlab folder on your computer create a startup.m file with the following
 
     %-----------------------------------------------------%
 
-<img width="790" alt="Screen Shot 2024-03-11 at 2 00 49 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/79e4c8b6-5eb0-4d21-ad19-5f344125d9ff">
