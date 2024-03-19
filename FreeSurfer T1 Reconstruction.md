@@ -9,21 +9,19 @@
 4. Make a folder path as follows: Subjects/s004/mri/orig add the dicom folder into the orig folder 
 
 5. `mri_info` checks if all freesurfer items are there
-6. `echo $SUBJECTS_DIR` sees what path your subjects are in 
-7. `unpacksdcmdir` converts individual slices of dicom file into volume to one file
-8. `cd /Users/jessica/Subjects/s004/mri/orig` get into right directory in orig folder
-9. `setenv SUBJECTS_DIR $PWD`
-10. `setenv SUBJECTS_DIR /Users/jessica/Subjects`
-11. `mkdir unpack` creates empty folder called unpack (in orig folder)
-12. `cd unpack/`
-13. `unpacksdcmdir -src ../dicom -targ . -scanonly ./info`
-14. Make text file in textedit (format → plain text) and enter "37 3danat COR blah", name the file unpack.rule. (Output of the previous step shows what number it should be, in this case 37) and put in unpack folder
-15. `mri_convert -all-info`
-16. `mv unpack.rule.txt unpack.rule` to rename unpack.rule.txt to unpack.rule
+6. `setenv SUBJECTS_DIR $PWD`
+7. `setenv SUBJECTS_DIR /Users/jessica/Subjects` set your subject directory
+8. `echo $SUBJECTS_DIR` sees what path your subjects are in 
+10. `cd /Users/jessica/Subjects/s004/mri/orig` get into right directory in orig folder
+12. `mkdir unpack` creates empty folder called unpack (in orig folder)
+13. `cd unpack/`
+14. `vi unpack.rule` makes a file called unpack.rule, enter "37 3danat COR blah" (number changes based on dicom scan)
+15. `unpacksdcmdir -src ../dicom -targ . -scanonly ./info`
+16. `mri_convert -all-info`
 17. `unpacksdcmdir -src ../dicom -targ . -cfg ./unpack.rule` make sure you are in the unpack folder (this step may take some time) 
 18. `cd ../` make sure in orig file for next step (going back one folder) 
 19. `mri_convert unpack/3danat/037/COR-.info ./001.mgz` after this step there should be a 001.mgz in the orig folder
-20. `recon-all`
+20. `recon-all` this step will take about 10 hours to complete the whole processing
 
 ### Alternate Steps if Error Present at Step 17
 #### Using Mango
