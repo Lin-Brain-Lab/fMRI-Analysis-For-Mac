@@ -7,11 +7,11 @@ Some commands are important for making screens to process data remotely as it of
 
 `screen` opens a new screen
 
-`screen -r` enter screen number, to reconnect to screen 
+`screen -r XXXXX` to reconnect to screen, where XXXXX is the screen number
 
-CTRL + A then D to exit from screen
+CTRL + a then d to exit from screen
 
-CTRL + A then K to kill the screen
+CTRL + a then k to kill the screen
 
 ## Common Errors 
 If an error occurs with reading the dicom files (Ex. ERROR: reading ../dicom/EEGFMRI_WM_S004.MR.RESEARCH_FHLIN.0037.0001.2023.02.24.17.53.54.227018.233311136.IMA tag 28 30) try installing XQuartz.
