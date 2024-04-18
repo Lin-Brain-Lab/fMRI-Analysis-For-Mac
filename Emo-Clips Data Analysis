@@ -1,2 +1,7 @@
 #Emo-Clips Data Analysis 
 ## T1 Reconstruction
+1. Make a folder s001/subjects/s001/mri/orig/dicom, add dicom data into this folder (from folder T1)
+2. EEGFMRI_EMOCLIPS_S002_EEGFMRI_EMOCLIPS_S002.MR.RESEARCH_FHLIN.0009.0001.2022.06.06.17.47.47.272116.90047252.IMA
+dicom number is FHLIN.0009
+
+
