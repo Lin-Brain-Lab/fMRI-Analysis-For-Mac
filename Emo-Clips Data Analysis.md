@@ -1,0 +1,11 @@
+#Emo-Clips Data Analysis 
+## T1 Reconstruction
+1. Make the following folder path, add the dicom data into this folder (from T1 folder)
+<details><summary>Example Folder Path</summary>
+<img width="1205" alt="Screen Shot 2024-04-18 at 2 25 09 PM" src="https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/assets/157174338/6b64a7b0-14d5-4373-a74c-b7e02c6243b4">
+</details>
+
+3. EEGFMRI_EMOCLIPS_S002_EEGFMRI_EMOCLIPS_S002.MR.RESEARCH_FHLIN.0009.0001.2022.06.06.17.47.47.272116.90047252.IMA
+dicom number is FHLIN.0009
+
+
