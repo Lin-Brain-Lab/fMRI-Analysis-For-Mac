@@ -53,8 +53,9 @@ markerFile={
 4. `mris_convert lh.seghead lh.seghead.tri` if done successfully, output should be "Saving lh.seghead.tri as a surface in TKREGISTER space"
 
 ## Co-register between MRI and EEG sensors
-1. Download 
-
+1. Download the digitizer folder 
+2. Download [register_eeg.m](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/Scripts/EEG%20Analysis/register_eeg.m) and add it to your subjects eeg_raw folder
+3. Download [eeg_mri_coregister_072922.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/eeg_mri_coregister_072922.m) and add it to your subjects eeg_raw folder
 
 
 ## Examine Evoked Fields
