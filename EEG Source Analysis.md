@@ -56,6 +56,11 @@ markerFile={
 1. Download the digitizer folder 
 2. Download [register_eeg.m](https://github.com/Lin-Brain-Lab/fMRI-Analysis-For-Mac/blob/main/Scripts/EEG%20Analysis/register_eeg.m) and add it to your subjects eeg_raw folder
 3. Download [eeg_mri_coregister_072922.m](https://github.com/fahsuanlin/labmanual/blob/master/scripts/eeg_mri_coregister_072922.m) and add it to your subjects eeg_raw folder
+4. Change line 3 to `setenv('SUBJECTS_DIR','/Users/jessica/data_analysis/eegfmri/subjects/');` to your subject directory
+5. Change line 6 to `file_source_fif='/Users/jessica/data_analysis/eegfmri/subjects/180330_SYH/bem/180330_SYH-5-src.fif';` to your subjects 5-src.fif file
+6. Change line 9 to `surf_outer_skull='/Users/jessica/data_analysis/eegfmri/subjects/180330_SYH/bem/watershed/180330_SYH_outer_skull_surface';` to the location of your subjects outer_skull_surface file
+7. Change line 10 to `surf_inner_skull='/Users/jessica/data_analysis/eegfmri/subjects/180330_SYH/bem/watershed/180330_SYH_inner_skull_surface';` to the location of your subjects inner_skull_surface file
+8. Change line 11 to `surf_outer_skin='/Users/jessica/data_analysis/eegfmri/subjects/180330_SYH/surf/lh.seghead.tri';` to the location of your subjects lh.seghead.tri file
 
 
 ## Examine Evoked Fields
