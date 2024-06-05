@@ -20,9 +20,17 @@ CTRL + a then k to kill the screen
 ## Copying Folders Using Terminal
 `cp -r /Applications/freesurfer/7.4.1/subjects/fsaverage* /Users/jessica/Subjects/` the first term is current folder location, the second is where you want it to go. This is useful when trying to avoid softlinking as that can cause pathing errors downstream.
 
-## Accessing the Server
+## Using the Server
+### Accessing the Server
 1. Connect to VPN Via Cisco AnyConnect
 2. `ssh -L 2222:142.76.25.154:22 jdin@142.76.1.189` enter your password when prompted
 3. Open a new terminal window `jessica@MacBook-Pro-2 ~ % ssh -p 2222 jdin@127.0.0.1 ` enter your password when prompted
 4. `ls /` then `ls /space_lin2` you can now `cd` to a folder location
+### Opening MatLab in the Server
+1. Connect to VPN Via Cisco AnyConnect
+2. `ssh -L 2222:142.76.25.154:22 jdin@142.76.1.189` enter your password when prompted
+3. `kinit` if 'no such file or directory'
+4. `pwd` should be /home/jdin (this command tells you your current directory)
+5. `tcsh`
+6. `matlab -nodisplay`
    
