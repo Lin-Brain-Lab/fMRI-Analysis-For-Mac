@@ -30,7 +30,8 @@ CTRL + a then k to kill the screen
 1. Connect to VPN Via Cisco AnyConnect
 2. `ssh -L 2222:142.76.25.154:22 jdin@142.76.1.189` enter your password when prompted
 3. `kinit` if 'no such file or directory'
-4. `pwd` should be /home/jdin (this command tells you your current directory)
-5. `tcsh`
-6. `matlab -nodisplay`
+4. `ssh lin2`
+5. `pwd` should be /home/jdin (this command tells you your current directory)
+6. `tcsh`
+7. `matlab -nodisplay`
    
