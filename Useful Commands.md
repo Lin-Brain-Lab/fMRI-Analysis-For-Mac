@@ -35,6 +35,12 @@ CTRL + a then k to kill the screen
 6. `tcsh`
 7. `matlab -nodisplay`
 ### Copying Files To and From the Server
-1. `scp -r -P 2222 jdin@localhost:/folders/server/location/path/* .` copys a file from the server to your local computer
-2. `scp -r -P 2222 /folder/* jdin@localhost:/folders/server/location/path/` copys a file from your local computer to the server
+### Server to Local
+1. Enter the server in one terminal window
+2. Open a second terminal window and cd to the location you want the file to download to
+3. `scp -r -P 2222 jdin@localhost:/folders/server/location/path/* .` copys a file from the server to your local computer (Note: this is a bash command, change your terminal settings from defult to run properly)
+### Local to Server
+4. Enter the server in one terminal window
+5. Open a second terminal window and cd to the parent folder of the folder you want copied
+6. `scp -r -P 2222 /folder/* jdin@localhost:/folders/server/location/path/` copys a file from your local computer to the server
    
