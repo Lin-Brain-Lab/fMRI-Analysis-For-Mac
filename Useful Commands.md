@@ -34,4 +34,7 @@ CTRL + a then k to kill the screen
 5. `pwd` should be /home/jdin (this command tells you your current directory)
 6. `tcsh`
 7. `matlab -nodisplay`
+### Copying Files To and From the Server
+1. `scp -r -P 2222 jdin@localhost:/folders/server/location/path/* .` copys a file from the server to your local computer
+2. `scp -r -P 2222 /folder/* jdin@localhost:/folders/server/location/path/` copys a file from your local computer to the server
    
