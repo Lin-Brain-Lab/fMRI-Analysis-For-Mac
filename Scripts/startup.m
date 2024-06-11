@@ -39,4 +39,10 @@ clear fsldir fsldirmpath;
 addpath (genpath ('/Users/jessica/MBP_PhD/Lin_Lab/fhlin_toolbox'));
 setenv('PATH', [getenv('PATH') ':/Users/jessica/MBP_PhD/Lin_Lab/fhlin_toolbox']);
 
-%-----------------------------------------------------%
+%------------------MBrecon----------------------------%
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox');
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox/tool_mb_recon');
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox/tool_mb_recon');
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox/tool_mb_recon/VB');
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox/tool_mb_recon/VD');
+addpath('/Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eva_toolbox/tool_mb_recon/VE');
