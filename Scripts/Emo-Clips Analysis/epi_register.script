@@ -1,0 +1,11 @@
+bbregister --s s013 --mov epi_005_f.mgh --init-reg bb_register_blipdown_init_05.dat --reg bb_register_blipdown_epi_05.dat --bold
+bbregister --s s013 --mov epi_005_f.mgh --init-reg bb_register_blipup_init_05.dat --reg bb_register_blipup_epi_05.dat --bold
+
+bbregister --s s013 --mov epi_014_f.mgh --init-reg bb_register_blipup_init_14.dat --reg bb_register_blipup_epi_14.dat --bold
+bbregister --s s013 --mov epi_014_f.mgh --init-reg bb_register_blipup_init_14.dat --reg bb_register_blipup_epi_14.dat --bold
+
+bbregister --s s013 --mov epi_023_f.mgh --init-reg bb_register_blipup_init_23.dat --reg bb_register_blipup_epi_23.dat --bold
+bbregister --s s013 --mov epi_023_f.mgh --init-reg bb_register_blipup_init_23.dat --reg bb_register_blipup_epi_23.dat --bold
+
+bbregister --s s013 --mov epi_032_f.mgh --init-reg bb_register_blipup_init_32.dat --reg bb_register_blipup_epi_32.dat --bold
+bbregister --s s013 --mov epi_032_f.mgh --init-reg bb_register_blipup_init_32.dat --reg bb_register_blipup_epi_32.dat --bold
