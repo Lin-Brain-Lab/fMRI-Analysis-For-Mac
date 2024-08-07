@@ -1,14 +1,14 @@
 close all; clear all;
-% this script makes a fmri_smsini_soa_gavg_glm file
+% this script makes a beta and t-stat file with header gfmri_smsini_soa_gavg_glm
 %------------------------------------------------------------------------------------
 %----------------------------------GLM setup-----------------------------------------
 % er-fmri setup
 
 file_stc={
-         './smsini_mb_run_1_acc';
-%        './smsini_mb_run_2_acc';
-%        './smsini_mb_run_3_acc';
-%        './smsini_mb_run_4_acc';
+         './s014_2_fsaverage_smsini_mb_run_1_acc';
+%        './s014_2_fsaverage_smsini_mb_run_2_acc';
+%        './s014_2_fsaverage_smsini_mb_run_3_acc';
+%        './s014_2_fsaverage_smsini_mb_run_4_acc';
     };
 
 
