@@ -25,7 +25,7 @@ CTRL + a then k to kill the screen
 1. Connect to VPN Via Cisco AnyConnect
 2. `ssh -L 2222:142.76.25.154:22 jdin@142.76.1.189` enter your password when prompted
 3. Open a new terminal window `ssh -p 2222 jdin@127.0.0.1 ` enter your password when prompted
-4. `ls /` then `ls /space_lin2` you can now `cd /` to a folder location
+4. `ls /` then `ls /space_lin2` you can now `cd /space_lin2` then you can `cd` to a folder location
 ### Opening MatLab in the Server
 1. Connect to VPN Via Cisco AnyConnect
 2. `ssh -L 2222:142.76.25.154:22 jdin@142.76.1.189` enter your password when prompted
