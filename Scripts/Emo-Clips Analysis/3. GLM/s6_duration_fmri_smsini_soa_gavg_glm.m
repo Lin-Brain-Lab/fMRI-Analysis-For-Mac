@@ -68,7 +68,7 @@ confound_polynomial_order=3;
 hypothesis{1}.rv=[1 2 3 4 5 6 7 8]; %index to glm_var 
 hypothesis{1}.cvec=[1 1 1 1 1 1 1 1];
 
-output_stem='dur_lowlevel_run_3_smsini_soa_gavg_glm';
+output_stem='run_3_smsini_soa_gavg_glm';
 %------------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
