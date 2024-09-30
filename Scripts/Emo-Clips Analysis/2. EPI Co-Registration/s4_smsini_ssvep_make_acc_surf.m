@@ -1,48 +1,35 @@
 close all; clear all;
 
-% NOTE: I can only run 2 or less runs at a time, thinking this is because there are
-% only 2 registration files
-
-%this script creates 2 .stc files per run (one lh one rh) with the header
-%'smsini_mb_run...'
-
 acc_mat={
-%'mb_run_1_acc.mat';
-%'mb_run_2_acc.mat';
+'mb_run_1_acc.mat';
+'mb_run_2_acc.mat';
 'mb_run_3_acc.mat';
-'mb_run_4_acc.mat';
 };
 
 acc_template={
-%'epi_005_f.mgh'
-%'epi_014_f.mgh'
-'epi_023_f.mgh'
-'epi_032_f.mgh'
+'mb_run_1_ref.mgh';
+'mb_run_2_ref.mgh';
+'mb_run_3_ref.mgh';
 };
 
 file_register={
-'bb_register_blipdown_epi_5.dat';
-'bb_register_blipup_epi_5.dat';
+'bb_register_epi_01.dat';
+'bb_register_epi_02.dat';
+'bb_register_epi_03.dat';
 };
 
-TR=.1; %second
+TR=0.1; %second 
 
 flag_morph=1;
-flag_native=1;
-flag_nii=1;
-
-subject='s014';
+subject='s001';
 target_subject='fsaverage';
-output_stem='smsini';
-
 
 for f_idx=1:length(acc_mat)
-    load(acc_mat{f_idx});
+        load(acc_mat{f_idx});
 
-    timeVec=[0:size(acc,4)-1].*TR;
+        timeVec=[0:size(acc,4)-1].*TR;
 
-    [dummy, fstem]=fileparts(acc_mat{f_idx});
-    fstem=sprintf('%s_%s',output_stem, fstem);
+        [dummy, fstem]=fileparts(acc_mat{f_idx});
 
     brain = MRIread(acc_template{f_idx});
     brain.vol=acc;
@@ -61,7 +48,6 @@ for f_idx=1:length(acc_mat)
     fn3=sprintf('%s-lh.stc',fstem);
     stc=squeeze(brain_lh.vol);
     inverse_write_stc(stc,[0:brain_lh.nvoxels-1],timeVec(1).*1e3,mean(diff(timeVec)).*1e3,fn3);
-
     brain_rh = MRIread(fn2);
     fn4=sprintf('%s-rh.stc',fstem);
     stc=squeeze(brain_rh.vol);
@@ -81,7 +67,3 @@ for f_idx=1:length(acc_mat)
         %eval(sprintf('!rm %s %s',fn3,fn4));
     end;
 end;
-
-
-
-return;
