@@ -90,7 +90,7 @@ for f_idx=1:length(headerFile)
     end;
 
 
-    file_para=sprintf('%s_soa.para',fstem);
+    file_para=sprintf('%s_clip_duration_soa.para',fstem);
 
     fprintf('writing [%s]....\n',file_para);
     fp=fopen(file_para,'w');
