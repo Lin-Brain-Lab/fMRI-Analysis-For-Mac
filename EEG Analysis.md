@@ -1,4 +1,5 @@
-##1. Set-Up EEGLAB Environment
+## 1. Set-Up EEGLAB Environment
+
 1. Create a 'eeg_analysis' folder in each subjects folder to house the eeg files.
 2. Enter MATLAB through tcsh shell. Set environment as usual.
 3. Change directory to path of EEGLAB folder: /Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eeglab2023.0
@@ -7,15 +8,18 @@
 6. Re-name dataset to reflect the subject and run number 's001_run1'
 8. Check that the number of channels align with what is expected, and that the sampling rate is 5000 Hz if simultaneous EEG-fMRI.
 
-##2. Re-Reference to TP9/TP10
+## 2. Re-Reference to TP9/TP10
+
 10. 'Tools/Re-reference the data', select 'Re-reference data to channel(s):' then select the '...' icon and select TP9 & TP10. Select 'Ok' and name the file 's001_run1_REF' check 'save as' and 'browse' to the eeg_analysis folder in the subject folder you are analysing, and save.
 
-##3. Reject Bad Data
+## 3. Reject Bad Data
+
 11. 'Plot/Channel data (scroll)'. Change scale to 200 then change the time range to 30 in 'Settings/Time range to display'. Click and drag to select noise or the beginning of experiement (before protocol starts) and at the end. After highlighting the bad data is complete, select 'Reject'. Re-name the file to add '_REJ' at the end.
 
 NOTE: It is a good idea to do a fast fourier transform here to see the specific bandpass and notch filter needed for this data. For the most part, the filtering outline below can work.
 
-##4. Apply a Bandpass and Notch Filter
+## 4. Apply a Bandpass and Notch Filter
+
 11. Bandpass filter: 'Tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
 12. notch filter: erplab/filtering frequenct tools/ filters for eeg data, set parkmclean notch filter at 60Hz (at 60Hz done when eeg not doen in faraday cage, my data is eeg-fmri so it is in faraday cage). save dataset with extra _not and save
 13. ICA (independetn component analysis): tools/decompoase data by ISC, leave at default, get rid of ECG if you have it. click use all channels select all except ECG. takes long. To cheeck if you chose the correct channel for vertical and horizontal headmovement go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
