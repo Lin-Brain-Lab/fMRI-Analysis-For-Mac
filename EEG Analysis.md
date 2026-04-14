@@ -1,16 +1,22 @@
-1. rename triggers in the way you want to organise them
-2. make sure you are in the directory that you want the files to go in 
-3. open eeglab command window 'eeglab'
-4. flie/import data/using eeg pab functions and /from brainvision vhdr file/slecet the vhdr file you want to analyse
-5. ok to first prompt
-6. name dataset pt_s001_eeg1
-7. if fmri-eeg have 5000 sampling rate, chech number of channels
-8. reference to TP9 & TP10, tools/rereference data, then rereference data to channeld TP9 &TP10, ok name pt_s001_eeg1_ref save fine and browse name and save file
-9. channel data scroll: reject bad data: plot/channel datascrool. change scame to 200 then settings timetrange to 30. click and drag to delete noise or beginning of experiement before protocol starts and at the end, click forward to look through and  after done highlighting then reject. one rejected label with extra underscore at the _rej
+##1. Set-Up EEGLAB Environment
+1. Create a 'eeg_analysis' folder in each subjects folder to house the eeg files.
+2. Enter MATLAB through tcsh shell. Set environment as usual.
+3. Change directory to path of EEGLAB folder: /Users/jessica/Documents/MBP_PhD/Lin_Lab/fhlin_toolbox/eeglab2023.0
+4. Open with EEGLAB in command window `eeglab`
+5. 'Flie/Import data/Using EEGLAB functions and plugins/From Brain Vis. Rec. .vhdr or .ahdr file/', then select the .vhdr file you want to analyse. Select 'Ok' to the first prompt.
+6. Re-name dataset to reflect the subject and run number 's001_run1'
+8. Check that the number of channels align with what is expected, and that the sampling rate is 5000 Hz if simultaneous EEG-fMRI.
 
-good idea to do a fast fourier transform here to see the specific bandpass and notch filter for this data
+##2. Re-Reference to TP9/TP10
+10. 'Tools/Re-reference the data', select 'Re-reference data to channel(s):' then select the '...' icon and select TP9 & TP10. Select 'Ok' and name the file 's001_run1_REF' check 'save as' and 'browse' to the eeg_analysis folder in the subject folder you are analysing, and save.
 
-11. bandpass filter: clean up data: kind of trial and error but for the most part, tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
+##3. Reject Bad Data
+11. 'Plot/Channel data (scroll)'. Change scale to 200 then change the time range to 30 in 'Settings/Time range to display'. Click and drag to select noise or the beginning of experiement (before protocol starts) and at the end. After highlighting the bad data is complete, select 'Reject'. Re-name the file to add '_REJ' at the end.
+
+NOTE: It is a good idea to do a fast fourier transform here to see the specific bandpass and notch filter needed for this data. For the most part, the filtering outline below can work.
+
+##4. Apply a Bandpass and Notch Filter
+11. Bandpass filter: 'Tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
 12. notch filter: erplab/filtering frequenct tools/ filters for eeg data, set parkmclean notch filter at 60Hz (at 60Hz done when eeg not doen in faraday cage, my data is eeg-fmri so it is in faraday cage). save dataset with extra _not and save
 13. ICA (independetn component analysis): tools/decompoase data by ISC, leave at default, get rid of ECG if you have it. click use all channels select all except ECG. takes long. To cheeck if you chose the correct channel for vertical and horizontal headmovement go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
 14. ocular correction (blinkinh and slide to side eye movements): plot/component activation scroll, set scale to 100, settings timerange display 20ms, look for channels with eyeblinds or movemnts, click channels with these artefacts. tools/removevomponents from data, remove the ones with eye clips, plot single tiral to double chect these are the ones you want to remove, change timerange to 100 and setting timereage to display 20, red is new blue is old one, then accept and save with new _o
