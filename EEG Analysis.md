@@ -6,23 +6,25 @@
 4. Open with EEGLAB in command window `eeglab`
 5. 'Flie/Import data/Using EEGLAB functions and plugins/From Brain Vis. Rec. .vhdr or .ahdr file/', then select the .vhdr file you want to analyse. Select 'Ok' to the first prompt.
 6. Re-name dataset to reflect the subject and run number 's001_run1'
-8. Check that the number of channels align with what is expected, and that the sampling rate is 5000 Hz if simultaneous EEG-fMRI.
+7. Check that the number of channels align with what is expected, and that the sampling rate is 5000 Hz if simultaneous EEG-fMRI.
 
 ## 2. Re-Reference to TP9/TP10
 
-10. 'Tools/Re-reference the data', select 'Re-reference data to channel(s):' then select the '...' icon and select TP9 & TP10. Select 'Ok' and name the file 's001_run1_REF' check 'save as' and 'browse' to the eeg_analysis folder in the subject folder you are analysing, and save.
+8. 'Tools/Re-reference the data', select 'Re-reference data to channel(s):' then select the '...' icon and select TP9 & TP10. Select 'Ok' and name the file 's001_run1_REF' check 'save as' and 'browse' to the eeg_analysis folder in the subject folder you are analysing, and save.
 
 ## 3. Reject Bad Data
 
-11. 'Plot/Channel data (scroll)'. Change scale to 200 then change the time range to 30 in 'Settings/Time range to display'. Click and drag to select noise or the beginning of experiement (before protocol starts) and at the end. After highlighting the bad data is complete, select 'Reject'. Re-name the file to add '_REJ' at the end.
+9. 'Plot/Channel data (scroll)'. Change scale to 200 then change the time range to 30 in 'Settings/Time range to display'. Click and drag to select noise or the beginning of experiement (before protocol starts) and at the end. After highlighting the bad data is complete, select 'Reject'. Re-name the file to add '_REJ' at the end.
 
 NOTE: It is a good idea to do a fast fourier transform here to see the specific bandpass and notch filter needed for this data. For the most part, the filtering outline below can work.
 
+### CONTINUE HERE
+
 ## 4. Apply a Bandpass and Notch Filter
 
-11. Bandpass filter: 'Tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
-12. notch filter: erplab/filtering frequenct tools/ filters for eeg data, set parkmclean notch filter at 60Hz (at 60Hz done when eeg not doen in faraday cage, my data is eeg-fmri so it is in faraday cage). save dataset with extra _not and save
-13. ICA (independetn component analysis): tools/decompoase data by ISC, leave at default, get rid of ECG if you have it. click use all channels select all except ECG. takes long. To cheeck if you chose the correct channel for vertical and horizontal headmovement go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
+10. Bandpass filter: 'Tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
+11. notch filter: erplab/filtering frequenct tools/ filters for eeg data, set parkmclean notch filter at 60Hz (at 60Hz done when eeg not doen in faraday cage, my data is eeg-fmri so it is in faraday cage). save dataset with extra _not and save
+12. ICA (independetn component analysis): tools/decompoase data by ISC, leave at default, get rid of ECG if you have it. click use all channels select all except ECG. takes long. To cheeck if you chose the correct channel for vertical and horizontal headmovement go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
 14. ocular correction (blinkinh and slide to side eye movements): plot/component activation scroll, set scale to 100, settings timerange display 20ms, look for channels with eyeblinds or movemnts, click channels with these artefacts. tools/removevomponents from data, remove the ones with eye clips, plot single tiral to double chect these are the ones you want to remove, change timerange to 100 and setting timereage to display 20, red is new blue is old one, then accept and save with new _o
 15. make event list: erplab/event list/create eeg event list/continue/advanced/ put event code number, the label, binn number and bin descrobtopn and update line, then apply, save, continue/overwrite if there are changes to event list, click numeric codes and applu, save with extra _eve
 16. extract bin-based epoch: erplab/extract bin-based epochs/ -200 - 1000 timerannge/run, save with ectra _epoc
