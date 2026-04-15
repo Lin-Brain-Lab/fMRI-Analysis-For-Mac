@@ -18,13 +18,17 @@
 
 NOTE: It is a good idea to do a fast fourier transform here to see the specific bandpass and notch filter needed for this data. For the most part, the filtering outline below can work.
 
-### CONTINUE HERE
-
 ## 4. Apply a Bandpass and Notch Filter
 
-10. Bandpass filter: 'Tools/fileter data/bastic FIR filter, low range 1 high 40, ok. save dataset with extra _bnd and save
-11. notch filter: erplab/filtering frequenct tools/ filters for eeg data, set parkmclean notch filter at 60Hz (at 60Hz done when eeg not doen in faraday cage, my data is eeg-fmri so it is in faraday cage). save dataset with extra _not and save
-12. ICA (independetn component analysis): tools/decompoase data by ISC, leave at default, get rid of ECG if you have it. click use all channels select all except ECG. takes long. To cheeck if you chose the correct channel for vertical and horizontal headmovement go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
+10. Bandpass filter: 'Tools/Filter the data/Basic FIR filter', set the low range to 1 and high range to 40. Save the file with an extra _BND.
+11. Notch filter: 'ERPLAB/Filter & frequency tools/Filters for EEG data', ensure the Parks McClellan Notch is selected, filter at 60Hz. Save the file with and extra _NOT.
+
+NOTE: A 60Hz notch filter is done when EEG is not collected in a faraday cage. If data is collected by simultaneous EEG-fMRI, it is in faraday cage. 
+
+12. ICA (Independent Component Analysis): 'Tools/Decompoase data by ISC', leave at infomax runica.m (default). Click the 'channels...' button and select all electrodes except the ECG (if you have it), this stop will take some time.
+
+# CONTINUE HERE
+13. After ISC, to check if you chose the correct channels for vertical and horizontal head movement, go to plot/component maps/2d, vertical eyemoviement are lines right to left horizontal go up down (mostly channel 1 and 3)
 14. ocular correction (blinkinh and slide to side eye movements): plot/component activation scroll, set scale to 100, settings timerange display 20ms, look for channels with eyeblinds or movemnts, click channels with these artefacts. tools/removevomponents from data, remove the ones with eye clips, plot single tiral to double chect these are the ones you want to remove, change timerange to 100 and setting timereage to display 20, red is new blue is old one, then accept and save with new _o
 15. make event list: erplab/event list/create eeg event list/continue/advanced/ put event code number, the label, binn number and bin descrobtopn and update line, then apply, save, continue/overwrite if there are changes to event list, click numeric codes and applu, save with extra _eve
 16. extract bin-based epoch: erplab/extract bin-based epochs/ -200 - 1000 timerannge/run, save with ectra _epoc
