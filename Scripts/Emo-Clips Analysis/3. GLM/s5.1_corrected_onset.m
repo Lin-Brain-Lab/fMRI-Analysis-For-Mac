@@ -1,15 +1,15 @@
 close all; clear all;
 
 headerFile = {
-    '../eeg_raw/s001_emoclips_0001.vhdr';
-    '../eeg_raw/s001_emoclips_0002.vhdr';
-    '../eeg_raw/s001_emoclips_0003.vhdr';
+    '../eeg_raw/eegmri_emoclip_s022_run2_movie1.vhdr';
+    '../eeg_raw/eegmri_emoclip_s022_run3_movie2.vhdr';
+    '../eeg_raw/eegmri_emoclip_s022_run4_movie3.vhdr';
     };
 
 markerFile={
-    '../eeg_raw/s001_emoclips_0001.vmrk';
-    '../eeg_raw/s001_emoclips_0002.vmrk';
-    '../eeg_raw/s001_emoclips_0003.vmrk';
+    '../eeg_raw/eegmri_emoclip_s022_run2_movie1.vmrk';
+    '../eeg_raw/eegmri_emoclip_s022_run3_movie2.vmrk';
+    '../eeg_raw/eegmri_emoclip_s022_run4_movie3.vmrk';
     };
 erp_event={1e3, [1 2 3 4 5], [11 12 13 14 15 16 17], [51 52 53 54 55 56 57 58], [61 62 63 64 65 66 67 68 69 70 71 72], [81 82 83 84 85 86 87 88 89], [90 91 92 93 94 95 96 97 98 99], [100 101 102 103 104 105 106 107 108 109], [111 112 113 114 115 116 117 118]};
 
@@ -90,7 +90,7 @@ for f_idx=1:length(headerFile)
     end;
 
 
-    file_para=sprintf('%s_clip_duration_soa.para',fstem);
+    file_para=sprintf('%s_corrected_soa.para',fstem);
 
     fprintf('writing [%s]....\n',file_para);
     fp=fopen(file_para,'w');
@@ -99,10 +99,20 @@ for f_idx=1:length(headerFile)
     mri_idx=find(trigger{f_idx}.event==1e3);
     soa_start=min(trigger{f_idx}.time(mri_idx)./fs(f_idx));
 
-    for idx=1:length(trigger{f_idx}.time)
-        fprintf(fp,'%2.2f\t%d\n',trigger{f_idx}.time(idx)./fs(f_idx)+soa_offset-soa_start,trigger{f_idx}.event(idx));
-        %fprintf(fp,'%2.2f\t%d\n',round((trigger{f_idx}.time(idx)./fs(f_idx)+soa_offset-soa_start)/TR)*TR,trigger{f_idx}.event(idx));
-    end;
+    for idx = 1:length(trigger{f_idx}.time)
+
+    event = trigger{f_idx}.event(idx);
+
+    % Skip MRI (1000) and Sync (150) triggers
+    if event ~= 1000 && event ~= 150
+
+        onset = trigger{f_idx}.time(idx)./fs(f_idx) + soa_offset - soa_start;
+
+        fprintf(fp,'%2.2f\t%d\n', onset, event);
+
+    end
+
+end
 
     fclose(fp);
 
