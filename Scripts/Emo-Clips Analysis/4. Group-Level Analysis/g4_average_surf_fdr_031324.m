@@ -23,43 +23,18 @@ subject={
 
 
 cond_stem={
-        % 'Aug28_posvsneg'
-        % 'Sep10_posvsneg'
-        % 'group_signed' % only original, (s011, s013, s014, s015, s017, s018, s021)
-        % 'june1_group_signed' %added s002, and s010
+
         'Group_Signed_July20'
-
-
-      % 'jan1_valence_run2_fmri_surf_soa_glm_h07_beta' %low-level visual for run 2 only
-      % 'jan1_valence_run1v_fmri_surf_soa_glm_h01_beta' %low-level visual run 1 & 3
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h01_beta' %negative only 
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h02_beta' %neutral only
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h03_beta' %positive only
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h04_beta' %negative vs positive
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h05_beta' %negative vs neutral
-      % 'jan1_valence_run3_fmri_surf_soa_glm_h06_beta' %positive vs neutral
-
-
-     % 'dec9_run3_fmri_surf_soa_glm_h01_beta'  %neutral vs non-neutral hypothesis{1}.rv=[1 2 3 4 5 7 8]; hypothesis{1}.cvec=[-1/5 1 1 -1/5 -1/5 -1/5 -1/5];
-     % 'dec9_run3_fmri_surf_soa_glm_h02_beta' %emo vs neutral hypothesis{2}.rv=[1 2 3 4 5 7 8]; hypothesis{2}.cvec=[0 -1/2 -1/2 1 0 0 0];
-     % 'dec9_run3_fmri_surf_soa_glm_h03_beta' %neutral only hypothesis{3}.rv=[1 2 3 4 5 7 8]; hypothesis{3}.cvec=[0 1 1 0 0 0 0];
-     % 'dec9_run3_fmri_surf_soa_glm_h04_beta' %emotion only hypothesis{4}.rv=[1 2 3 4 5 7 8]; hypothesis{4}.cvec=[0 0 0 1 0 0 0];
-     % 'dec9_run3_fmri_surf_soa_glm_h05_beta' %emotion vs everything hypothesis{5}.rv=[1 2 3 4 5 7 8]; hypothesis{5}.cvec=[-1/7 -1/7 -1/7 1 -1/7 -1/7 -1/7];
-
 
 };
 
 cond_output_stem={
     'h01';
-    % 'h02';
-    % 'h03';
 };
 
 
 cond_stem_str={
     'group_signed';
-    % 'V';
-    % 'AV';
     };
 
 root_dir='/Users/jessica/data_analysis/emoclips';
